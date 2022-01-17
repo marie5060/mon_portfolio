@@ -1,4 +1,5 @@
 import React from 'react';
+
 import moi from '../../assets/moi.jpg';
 
 const AboutMe = ({
