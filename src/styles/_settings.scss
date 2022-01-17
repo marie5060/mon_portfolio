@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+@font-face {
+  font-family: Font_title;
+  src: url('../Font/RalewayDots-Regular.ttf');
+}
+@font-face {
+  font-family: Font_main;
+  src: url('../Font/OpenSans-VariableFont_wdth\,wght.ttf');
+}
+// h1 {
+//   z-index: 1000;
+//   color: red;
+// }
