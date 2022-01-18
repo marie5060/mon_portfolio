@@ -1,5 +1,7 @@
 import React from 'react';
 
+import moi from '../../assets/moi.jpg';
+
 const AboutMe = ({
   heightScreen,
   countSection,
@@ -26,12 +28,17 @@ const AboutMe = ({
         transform: `translateY(-${heightScreen * countSection}px)`,
       }}
       onWheel={(e) => scroll(e.deltaY)}>
-      <h2>About Me</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor totam
-        deserunt quasi ex odio iste atque inventore sed nulla! Est fugit rem, magni quae
-        iusto porro eum vitae modi!
-      </p>
+      <div className="aboutMe__container">
+        <h2 className="aboutMe__container__title">ABOUT ME</h2>
+        <div className="aboutMe__infos">
+          <p className="aboutMe__infos__presentation">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor totam
+            deserunt quasi ex odio iste atque inventore sed nulla! Est fugit rem, magni
+            quae iusto porro eum vitae modi!
+          </p>
+          <img className="aboutMe__infos__picture" alt="" src={moi} />
+        </div>
+      </div>
     </div>
   );
 };

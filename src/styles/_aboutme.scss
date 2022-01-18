@@ -1,4 +1,65 @@
 .aboutMe {
   background-color: #95b7b1;
   transition: 1s;
+  &__container {
+    &::before {
+      content: '';
+      position: absolute;
+      height: 14vw;
+      width: 16vw;
+      border-radius: 50%;
+      background-color: #122625;
+      left: 5vw;
+      top: 4vw;
+      z-index: -1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      height: 11vw;
+      width: 14vw;
+      border-radius: 50%;
+      background-color: #5d9087;
+      left: 12vw;
+      top: 2vw;
+      z-index: 2;
+    }
+    &__title {
+      position: relative;
+      color: #1c2b2a;
+      font-size: 6vw;
+      font-weight: 400;
+      font-family: Font_title;
+      padding-top: 4vw;
+      padding-left: 18vw;
+      z-index: 6;
+      &::before {
+        content: '';
+        position: absolute;
+        height: 6vw;
+        width: 7vw;
+        border-radius: 50%;
+        background-color: #204f4f;
+        top: 11vw;
+        left: 16vw;
+        z-index: 4;
+      }
+    }
+  }
+  &__infos {
+    padding-top: 10vw;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    &__presentation {
+      width: 40%;
+      font-family: Font_main;
+      font-size: 2vw;
+    }
+    &__picture {
+      max-width: 15%;
+      height: auto;
+    }
+  }
 }
