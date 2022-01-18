@@ -33,14 +33,16 @@ const Contact = ({
           <input placeholder="lastname"></input>
           <input placeholder="name"></input>
           <input placeholder="email"></input>
-          <textarea placeholder="votre demande ici"></textarea>
+          <textarea rows={15} cols={33} placeholder="votre demande ici"></textarea>
           <button>Envoyer</button>
         </form>
         <div className="contact__container__infos">
           <p>Mon adresse mail</p>
           <p>mon telephone</p>
-          <p>github</p>
-          <p>linkdn</p>
+          <div className="contact__container__infos__logo">
+            <p>github</p>
+            <p>linkdn</p>
+          </div>
         </div>
       </div>
     </div>
