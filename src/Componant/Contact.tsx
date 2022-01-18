@@ -25,12 +25,24 @@ const Contact = ({
         transform: `translateY(-${heightScreen * countSection}px)`,
       }}
       onWheel={(e) => scroll(e.deltaY)}>
-      <form>
-        <input placeholder="lastname"></input>
-        <input placeholder="name"></input>
-        <input placeholder="email"></input>
-        <input placeholder="texaera"></input>
-      </form>
+      <div className="contact__header">
+        <h2 className="contact__header__title">CONTACT ME</h2>
+      </div>
+      <div className="contact__container">
+        <form className="contact__container__form">
+          <input placeholder="lastname"></input>
+          <input placeholder="name"></input>
+          <input placeholder="email"></input>
+          <textarea placeholder="votre demande ici"></textarea>
+          <button>Envoyer</button>
+        </form>
+        <div className="contact__container__infos">
+          <p>Mon adresse mail</p>
+          <p>mon telephone</p>
+          <p>github</p>
+          <p>linkdn</p>
+        </div>
+      </div>
     </div>
   );
 };

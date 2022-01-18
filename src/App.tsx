@@ -31,13 +31,13 @@ function App() {
         height: `${heightScreen}px`,
       }}>
       <Home heightScreen={heightScreen} countSection={countSection} scroll={scroll} />
+      <Contact heightScreen={heightScreen} countSection={countSection} scroll={scroll} />
       <AboutMe heightScreen={heightScreen} countSection={countSection} scroll={scroll} />
       <Portfolio
         heightScreen={heightScreen}
         countSection={countSection}
         scroll={scroll}
       />
-      <Contact heightScreen={heightScreen} countSection={countSection} scroll={scroll} />
     </div>
   );
 }
