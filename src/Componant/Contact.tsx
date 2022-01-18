@@ -1,14 +1,6 @@
 import React from 'react';
 
-const Contact = ({
-  heightScreen,
-  countSection,
-  scroll,
-}: {
-  heightScreen: number;
-  countSection: number;
-  scroll: Function;
-}) => {
+const Contact = () => {
   // const [heightScreen, setHeightScreen] = useState(0);
 
   // useEffect(() => {
@@ -18,13 +10,7 @@ const Contact = ({
   //   });
   // }, []);
   return (
-    <div
-      className="contact"
-      style={{
-        height: `${heightScreen}px`,
-        transform: `translateY(-${heightScreen * countSection}px)`,
-      }}
-      onWheel={(e) => scroll(e.deltaY)}>
+    <div>
       <div className="contact__header">
         <h2 className="contact__header__title">CONTACT ME</h2>
       </div>
