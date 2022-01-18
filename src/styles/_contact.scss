@@ -49,4 +49,50 @@
       }
     }
   }
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 7vw;
+    &__form {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5vw;
+
+      input,
+      textarea {
+        width: 80%;
+        margin: 1rem 2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        border: 1px solid #c3c7c8;
+      }
+      button {
+        margin-top: 2rem;
+        width: 12vw;
+        border-radius: 10px;
+        border: 1px solid #c3c7c8;
+        padding: 0.5rem 0;
+        background-color: white;
+        font-weight: bolder;
+        margin-left: 10vw;
+      }
+    }
+    &__infos {
+      font-family: Font_main;
+      font-size: 15px;
+      color: #fdeded;
+      padding-top: 9vw;
+      padding-right: 1vw;
+      width: 15%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5vw;
+      text-align: center;
+      &__logo {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
 }
