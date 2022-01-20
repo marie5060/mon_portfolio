@@ -9,6 +9,7 @@ const Portfolio = () => {
         <Polaroid />
         <Polaroid />
         <Polaroid />
+        <Polaroid />
       </div>
       <div className="portfolio__title">
         <h2 className="portfolio__title__project">PORTFOLIO</h2>

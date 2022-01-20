@@ -1,13 +1,29 @@
 .portfolio {
   background-color: #122625;
   transition: 1s;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  align-items: stretch;
   &__polaroids {
     display: flex;
     justify-content: space-around;
-    align-self: center;
+  }
+  &__title {
+    height: 30%;
+    display: flex;
+
+    justify-content: flex-end;
+    &__project {
+      position: relative;
+      color: #5d9087;
+      font-size: 6vw;
+      font-weight: 400;
+      font-family: Font_title;
+
+      z-index: 6;
+    }
   }
 }
