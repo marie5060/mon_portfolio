@@ -19,7 +19,6 @@ const AboutMe = () => {
   deserunt quasi ex odio iste atque inventore sed nulla! Est fugit rem, magni
   quae iusto porro eum vitae modi!`,
   ];
-  console.log(presentation.map((el) => el.length));
 
   return (
     <div>
@@ -41,21 +40,6 @@ const AboutMe = () => {
                 ))}
               </p>
             ))}
-            {/* {presentation.split(' ').map((word, index1) => (
-              <span className="aboutMe__infos__presentation__word" key={index1}>
-                {word.split('').map((letter, index2) => (
-                  <p
-                    style={{
-                      opacity: isVisible ? '1' : '0',
-                      transitionDelay: `${index2 / 10}s`,
-                    }}
-                    className="aboutMe__infos__presentation__word__letter"
-                    key={index2}>
-                    {letter}
-                  </p>
-                ))}
-              </span>
-            ))} */}
           </div>
           <img className="aboutMe__infos__picture" alt="" src={moi} />
         </div>
