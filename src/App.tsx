@@ -7,7 +7,9 @@ import Portfolio from './Componant/Portfolio';
 
 function App() {
   const [heightScreen, setHeightScreen] = useState(0);
-  const [countSection, setCountSection] = useState(0);
+  const [scrollValue, setScrollValue] = useState(0);
+  const [activeScroll, setActiveScroll] = useState(true);
+  console.log(scrollValue);
 
   useEffect(() => {
     setHeightScreen(window.innerHeight);
@@ -16,28 +18,46 @@ function App() {
     });
   }, []);
 
-  const scroll = (value: number) => {
-    if (value > 0) {
-      setCountSection(1);
-    } else if (value < 0) {
-      setCountSection(countSection - 1);
+  const section = [
+    { className: 'home', component: <Home /> },
+    { className: 'aboutMe', component: <AboutMe /> },
+    { className: 'portfolio', component: <Portfolio /> },
+    { className: 'contact', component: <Contact /> },
+  ];
+  const scroll = (valueScroll: number, index: number) => {
+    if (scrollValue >= 0) {
+      if (valueScroll > 0 && index < section.length - 1) {
+        setScrollValue(index + 1);
+        setActiveScroll(false);
+      } else {
+        if (scrollValue > 0) {
+          setScrollValue(index - 1);
+          setActiveScroll(false);
+        }
+      }
+      setTimeout(() => {
+        setActiveScroll(true);
+      }, 1000);
     }
   };
-
   return (
     <div
       className="app"
       style={{
         height: `${heightScreen}px`,
       }}>
-      <Home heightScreen={heightScreen} countSection={countSection} scroll={scroll} />
-      <Contact heightScreen={heightScreen} countSection={countSection} scroll={scroll} />
-      <AboutMe heightScreen={heightScreen} countSection={countSection} scroll={scroll} />
-      <Portfolio
-        heightScreen={heightScreen}
-        countSection={countSection}
-        scroll={scroll}
-      />
+      {section.map((el, index) => (
+        <div
+          key={index}
+          className={el.className}
+          style={{
+            height: `${heightScreen}px`,
+            transform: `translateY(-${heightScreen * scrollValue}px)`,
+          }}
+          onWheel={(e) => activeScroll && scroll(e.deltaY, index)}>
+          {el.component}
+        </div>
+      ))}
     </div>
   );
 }

@@ -2,15 +2,7 @@ import React from 'react';
 
 import moi from '../../assets/moi.jpg';
 
-const AboutMe = ({
-  heightScreen,
-  countSection,
-  scroll,
-}: {
-  heightScreen: number;
-  countSection: number;
-  scroll: Function;
-}) => {
+const AboutMe = () => {
   //   const [heightScreen, setHeightScreen] = useState(0);
 
   //   useEffect(() => {
@@ -21,13 +13,7 @@ const AboutMe = ({
   //   }, []);
 
   return (
-    <div
-      className="aboutMe"
-      style={{
-        height: `${heightScreen}px`,
-        transform: `translateY(-${heightScreen * countSection}px)`,
-      }}
-      onWheel={(e) => scroll(e.deltaY)}>
+    <div>
       <div className="aboutMe__container">
         <h2 className="aboutMe__container__title">ABOUT ME</h2>
         <div className="aboutMe__infos">
