@@ -9,7 +9,6 @@ function App() {
   const [heightScreen, setHeightScreen] = useState(0);
   const [scrollValue, setScrollValue] = useState(0);
   const [activeScroll, setActiveScroll] = useState(true);
-  console.log(scrollValue);
 
   useEffect(() => {
     setHeightScreen(window.innerHeight);
