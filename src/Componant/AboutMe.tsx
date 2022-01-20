@@ -29,7 +29,7 @@ const AboutMe = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       isVisible && setLaunchCount(true);
-    }, 1500);
+    }, 1200);
     if (lauchCount && isVisible) {
       const test = setInterval(
         () => {

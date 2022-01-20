@@ -5,7 +5,9 @@ import Polaroid from './Polaroid';
 
 const Portfolio = () => {
   //Créer un tableau d'object exemple:
+
   //Tu peut également l'importer depuis un autre fichier
+
   //   const projects = [
   //     {
   //       idProject: 1,
