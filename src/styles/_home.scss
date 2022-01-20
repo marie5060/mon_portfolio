@@ -15,8 +15,16 @@
     z-index: 6;
 
     &__name {
-      font-size: 6vw;
-      font-weight: 400;
+      display: flex;
+      &__word {
+        font-size: 6vw;
+        font-weight: 400;
+        margin: 0 1rem;
+        display: flex;
+        &--letter {
+          transition: 1s ease-in-out;
+        }
+      }
 
       &::before {
         content: '';
@@ -42,10 +50,14 @@
       }
     }
     &__dev {
-      font-size: 3vw;
-      font-weight: 400;
-      text-align: end;
-      padding-right: 7vw;
+      h1 {
+        font-size: 3vw;
+        font-weight: 400;
+        text-align: end;
+        padding-right: 7vw;
+        transition: 0.8s ease-in-out;
+        transition-delay: 1.2s;
+      }
       &::before {
         content: '';
         position: absolute;

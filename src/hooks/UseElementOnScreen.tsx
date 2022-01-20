@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const UseElementOnScreen = (options, targetRef) => {
+const UseElementOnScreen = (options: any, targetRef: any) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const optionsMemo = useMemo(() => {
     return options;
   }, [options]);
 
-  const callbackFunction = (entries) => {
+  const callbackFunction = (entries: any) => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);
   };
