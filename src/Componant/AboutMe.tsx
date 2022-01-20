@@ -6,6 +6,7 @@ import UseElementOnScreen from '../hooks/UseElementOnScreen';
 const AboutMe = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(0);
+  const [lauchCount, setLaunchCount] = useState(false);
   const [text, setText] = useState('');
 
   const isVisible = UseElementOnScreen(
@@ -26,7 +27,10 @@ const AboutMe = () => {
   const character = ['!', ',', '.', '?'];
 
   useEffect(() => {
-    if (isVisible) {
+    const timeout = setTimeout(() => {
+      isVisible && setLaunchCount(true);
+    }, 1500);
+    if (lauchCount && isVisible) {
       const test = setInterval(
         () => {
           count < presentation[0].length - 1 && setCount(count + 1);
@@ -36,12 +40,14 @@ const AboutMe = () => {
       setText(text + presentation[0][count]);
       return () => {
         clearInterval(test);
+        clearTimeout(timeout);
       };
     } else {
       setCount(0);
       setText('');
+      setLaunchCount(false);
     }
-  }, [count, isVisible]);
+  }, [count, isVisible, lauchCount]);
 
   return (
     <div>
