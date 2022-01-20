@@ -49,7 +49,10 @@ const AboutMe = () => {
         <h2 className="aboutMe__container__title">ABOUT ME</h2>
         <div className="aboutMe__infos">
           <div className="aboutMe__infos__presentation" ref={textRef}>
-            <p>{text}</p>
+            <p className="aboutMe__infos__presentation__text">
+              {text}
+              <span className="aboutMe__infos__presentation__text--bar">|</span>
+            </p>
           </div>
           <img className="aboutMe__infos__picture" alt="" src={moi} />
         </div>

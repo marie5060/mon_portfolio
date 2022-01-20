@@ -58,6 +58,22 @@
       font-size: 2vw;
       display: flex;
       flex-wrap: wrap;
+      &__text {
+        &--bar {
+          animation: 0.7s flicker infinite;
+          @keyframes flicker {
+            0% {
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+        }
+      }
       &__word {
         display: flex;
         margin: 0 0.5rem;
