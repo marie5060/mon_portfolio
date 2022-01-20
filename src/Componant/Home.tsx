@@ -1,14 +1,6 @@
 import React from 'react';
 
-const Home = ({
-  heightScreen,
-  countSection,
-  scroll,
-}: {
-  heightScreen: number;
-  countSection: number;
-  scroll: Function;
-}) => {
+const Home = () => {
   //   const [heightScreen, setHeightScreen] = useState(0);
 
   //   useEffect(() => {
@@ -21,13 +13,7 @@ const Home = ({
   //   }, []);
 
   return (
-    <div
-      className="home"
-      style={{
-        height: `${heightScreen}px`,
-        transform: `translateY(-${heightScreen * countSection}px)`,
-      }}
-      onWheel={(e) => scroll(e.deltaY)}>
+    <div>
       <div className="home__title">
         <h1 className="home__title__name">MARIE EMELINE LAINE</h1>
         <h2 className="home__title__dev">DEVELOPPEUSE WEB</h2>
