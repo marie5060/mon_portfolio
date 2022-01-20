@@ -56,6 +56,12 @@
       width: 40%;
       font-family: Font_main;
       font-size: 2vw;
+      display: flex;
+      flex-wrap: wrap;
+      &__word {
+        display: flex;
+        margin: 0 0.5rem;
+      }
     }
     &__picture {
       max-width: 15%;

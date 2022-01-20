@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import UseElementOnScreen from '../hooks/UseElementOnScreen';
 
 const Home = () => {
-  const titleRef = useRef<HTMLHeadingElement>();
+  const titleRef = useRef<HTMLDivElement>(null);
   const isVisible = UseElementOnScreen(
     {
       root: null,
@@ -12,7 +12,6 @@ const Home = () => {
     },
     titleRef,
   );
-  console.log(isVisible);
 
   const titleName = 'MARIE EMELINE LAINE';
   const titleDev = 'DEVELOPPEUSE WEB';
@@ -33,7 +32,7 @@ const Home = () => {
                       !isVisible && vowel.includes(letter)
                         ? `translateY(-20px)`
                         : `translateY(0)`,
-                    transitionDelay: `${index / 10}s`,
+                    transitionDelay: isVisible ? `${index / 10}s` : '',
                     opacity: !isVisible ? '0' : '1',
                   }}>
                   {letter}

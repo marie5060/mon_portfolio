@@ -1,4 +1,5 @@
 import React from 'react';
+
 import LiveUp1 from '../../assets/LiveUp1.jpg';
 
 const Polaroid = () => {
