@@ -1,10 +1,12 @@
 import React from 'react';
+
 import Polaroid from './Polaroid';
 
 const Portfolio = () => {
   return (
     <div className="portfolio">
       <div className="portfolio__polaroids">
+        <Polaroid />
         <Polaroid />
         <Polaroid />
         <Polaroid />
