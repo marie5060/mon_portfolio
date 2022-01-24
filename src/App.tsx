@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import AboutMe from './Componant/AboutMe';
-import Contact from './Componant/Contact';
-import Home from './Componant/Home';
-import Portfolio from './Componant/Portfolio';
-import Tech from './Componant/Tech';
+import AboutMe from './Component/AboutMe';
+import Contact from './Component/Contact';
+import Home from './Component/Home';
+import Portfolio from './Component/Portfolio';
+import Tech from './Component/Tech';
 
 function App() {
   const [heightScreen, setHeightScreen] = useState(0);

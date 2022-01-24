@@ -58,6 +58,6 @@
   &__polaroids {
     grid-area: 2/1;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
   }
 }
