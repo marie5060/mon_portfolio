@@ -5,6 +5,8 @@
   flex-direction: column-reverse;
   &__footer {
     height: 30%;
+    z-index: 6;
+
     &::before {
       content: '';
       position: absolute;
