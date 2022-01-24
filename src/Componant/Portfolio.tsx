@@ -32,6 +32,9 @@ const Portfolio = () => {
   //   ];
   return (
     <div className="portfolio">
+      <div className="portfolio__title">
+        <p>PORTFOLIO</p>
+      </div>
       <div className="portfolio__polaroids">
         <Polaroid />
         <Polaroid />
@@ -41,9 +44,6 @@ const Portfolio = () => {
         {/* {projects.map((project) => (
           <Polaroid key={project.idProject} project={project} />
         ))} */}
-      </div>
-      <div className="portfolio__title">
-        <h2 className="portfolio__title__project">PORTFOLIO</h2>
       </div>
     </div>
   );

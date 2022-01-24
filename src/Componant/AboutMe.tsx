@@ -25,6 +25,9 @@ const AboutMe = () => {
   ];
 
   const character = ['!', ',', '.', '?'];
+  const titleName = 'ABOUT ME';
+
+  const vowel = ['A', 'O', 'B', 'M'];
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -52,7 +55,28 @@ const AboutMe = () => {
   return (
     <div>
       <div className="aboutMe__container">
-        <h2 className="aboutMe__container__title">ABOUT ME</h2>
+        <p className="aboutMe__container__title">
+          {titleName.split(' ').map((word, index) => (
+            <div className="aboutMe__container__title__name" key={index}>
+              {word.split('').map((letter, index) => (
+                <span
+                  className="aboutMe__container__title__name--letter"
+                  key={index}
+                  style={{
+                    transform:
+                      !isVisible && vowel.includes(letter)
+                        ? `translateY(-20px)`
+                        : `translateY(0)`,
+                    transitionDelay: isVisible ? `${index / 10}s` : '',
+                    opacity: !isVisible ? '0' : '1',
+                  }}>
+                  {letter}
+                </span>
+              ))}
+            </div>
+          ))}
+        </p>
+
         <div className="aboutMe__infos">
           <div className="aboutMe__infos__presentation" ref={textRef}>
             <p className="aboutMe__infos__presentation__text">

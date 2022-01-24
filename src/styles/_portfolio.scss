@@ -2,7 +2,7 @@
   background-color: #122625;
   transition: 1s;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-around;
 
   align-items: stretch;
@@ -11,18 +11,17 @@
     justify-content: space-around;
   }
   &__title {
-    height: 30%;
+    position: relative;
     display: flex;
-
     justify-content: flex-end;
+    padding-right: 18vw;
+    color: #5d9087;
+    font-size: 6vw;
+    font-weight: 400;
+    font-family: Font_title;
+    padding-bottom: 4vw;
+    z-index: 6;
     &__project {
-      position: relative;
-      color: #5d9087;
-      font-size: 6vw;
-      font-weight: 400;
-      font-family: Font_title;
-
-      z-index: 6;
     }
   }
 }
