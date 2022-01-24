@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import moi from '../../assets/moi.jpg';
+import aboutMe from '../../assets/aboutMe.jpg';
 import UseElementOnScreen from '../hooks/UseElementOnScreen';
 
 const AboutMe = () => {
@@ -19,9 +19,7 @@ const AboutMe = () => {
   );
 
   const presentation = [
-    `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor totam
-  deserunt quasi ex odio iste atque inventore sed nulla! Est fugit rem, magni
-  quae iusto porro eum vitae modi!`,
+    `En reconversion professionelle, et après une formation de developpement web et web mobile au sein de la Wild Code School d'Anglet, me voilà à prendre mon envol. De nature enthousiaste, volontaire pour appronfondir mes connaissances et aimant le travail d'équipe, je suis à la recherche d'un stage d'une durée de 4 a 6 mois à compter du 14 février 2022, pouvant me permettre de m''épanouir et d'avancer main dans la main avec ma future entreprise.`,
   ];
 
   const character = ['!', ',', '.', '?'];
@@ -84,7 +82,7 @@ const AboutMe = () => {
               <span className="aboutMe__infos__presentation__text--bar">|</span>
             </p>
           </div>
-          <img className="aboutMe__infos__picture" alt="" src={moi} />
+          <img className="aboutMe__infos__picture" alt="" src={aboutMe} />
         </div>
       </div>
     </>

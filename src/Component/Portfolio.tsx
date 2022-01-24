@@ -1,9 +1,9 @@
 import React from 'react';
 
-import lfpll from '../../assets/lfpll2.png';
-import manomano from '../../assets/manomano.jpg';
 import blind from '../../assets/blind.png';
+import lfpll from '../../assets/lfpll2.png';
 import LiveUp from '../../assets/LiveUp1.jpg';
+import manomano from '../../assets/manomano.jpg';
 import IProject from '../interfaces/IProject';
 import Polaroid from './Polaroid';
 

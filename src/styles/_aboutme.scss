@@ -53,12 +53,12 @@
     }
   }
   &__infos {
-    padding-top: 10vw;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-evenly;
     &__presentation {
+      padding-top: 2vw;
       width: 40%;
       font-family: Font_main;
       font-size: 2vw;
@@ -86,6 +86,7 @@
       }
     }
     &__picture {
+      padding-top: 10vw;
       max-width: 15%;
       height: auto;
     }
