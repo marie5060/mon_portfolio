@@ -33,7 +33,7 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       <div className="portfolio__title">
-        <p>PORTFOLIO</p>
+        <p className="portfolio__title__p">PORTFOLIO</p>
       </div>
       <div className="portfolio__polaroids">
         <Polaroid />
