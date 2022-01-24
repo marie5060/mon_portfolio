@@ -3,8 +3,9 @@
   transition: 1s;
   display: flex;
   flex-direction: column-reverse;
-  &__footer {
-    height: 30%;
+  &__container {
+    z-index: 6;
+    position: relative;
     &::before {
       content: '';
       position: absolute;
@@ -34,8 +35,8 @@
       font-size: 6vw;
       font-weight: 400;
       font-family: Font_title;
-      padding-bottom: 4vw;
       padding-left: 18vw;
+      padding-bottom: 4vw;
       z-index: 6;
       &::before {
         content: '';
@@ -47,29 +48,23 @@
         bottom: 11vw;
         left: 16vw;
         z-index: 4;
+        &__name {
+          &--letter {
+            transition: 1s ease-in-out;
+          }
+        }
       }
     }
   }
-  //   &__container {
-  //     display: flex;
-  //     flex-direction: column;
-  //     gap: 150px;
-  //     margin-bottom: 5rem;
-  //     img {
-  //       width: 120px;
-  //       height: 100px;
-  //     }
-  //     &__1 {
-  //       display: flex;
-  //       justify-content: space-evenly;
-  //     }
-  //     &__2 {
-  //       display: flex;
-  //       justify-content: space-evenly;
-  //     }
-  //     &__3 {
-  //       display: flex;
-  //       justify-content: space-evenly;
-  //     }
-  //   }
+  &__icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    &__icon {
+      width: 120px;
+      height: 120px;
+      fill: #204f4f;
+    }
+  }
 }

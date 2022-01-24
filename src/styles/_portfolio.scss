@@ -1,27 +1,63 @@
 .portfolio {
   background-color: #122625;
   transition: 1s;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-around;
-
-  align-items: stretch;
-  &__polaroids {
-    display: flex;
-    justify-content: space-around;
-  }
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1.5fr;
   &__title {
+    grid-area: 5/1;
     position: relative;
+    color: #95b7b1;
     display: flex;
-    justify-content: flex-end;
-    padding-right: 18vw;
-    color: #5d9087;
     font-size: 6vw;
     font-weight: 400;
     font-family: Font_title;
-    padding-bottom: 4vw;
+    display: flex;
+    justify-content: flex-end;
     z-index: 6;
-    &__project {
+    &::before {
+      content: '';
+      position: absolute;
+      height: 14vw;
+      width: 16vw;
+      border-radius: 50%;
+      background-color: #95b7b1;
+      right: 5vw;
+      bottom: 4vw;
+      z-index: -1;
     }
+    &::after {
+      content: '';
+      position: absolute;
+      height: 11vw;
+      width: 14vw;
+      border-radius: 50%;
+      background-color: #5d9087;
+      right: 12vw;
+      bottom: 2vw;
+      z-index: 2;
+    }
+    &__p {
+      position: relative;
+      z-index: 6;
+      padding-right: 18vw;
+      padding-bottom: 4vw;
+      &::before {
+        content: '';
+        position: absolute;
+        height: 6vw;
+        width: 7vw;
+        border-radius: 50%;
+        background-color: #204f4f;
+        bottom: 11vw;
+        right: 16vw;
+        z-index: 4;
+      }
+    }
+  }
+  &__polaroids {
+    grid-area: 2/1;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
