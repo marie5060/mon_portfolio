@@ -18,7 +18,7 @@ const Home = () => {
   const vowel = ['A', 'E', 'I', 'O', 'U'];
 
   return (
-    <div>
+    <>
       <div className="home__title">
         <div className="home__title__name" ref={titleRef}>
           {titleName.split(' ').map((word, index) => (
@@ -51,7 +51,7 @@ const Home = () => {
           </h1>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

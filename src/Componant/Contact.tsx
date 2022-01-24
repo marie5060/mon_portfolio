@@ -1,37 +1,56 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import UseElementOnScreen from '../hooks/UseElementOnScreen';
+import { ReactComponent as LogoLinkedin } from '../../assets/linkedin2.svg';
+import { ReactComponent as LogoGithub } from '../../assets/github2.svg';
+import { ReactComponent as LogoMail } from '../../assets/email.svg';
+import { ReactComponent as LogoResume } from '../../assets/resume.svg';
 
 const Contact = () => {
-  // const [heightScreen, setHeightScreen] = useState(0);
+  const titleRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   setHeightScreen(window.innerHeight);
-  //   window.addEventListener('resize', () => {
-  //     setHeightScreen(window.innerHeight);
-  //   });
-  // }, []);
+  const isVisible = UseElementOnScreen(
+    {
+      root: null,
+      marginRoot: '0px',
+      treshold: 0.8,
+    },
+    titleRef,
+  );
+  const titleName = 'CONTACT ME';
+  const vowel = ['C', 'N', 'A', 'T', 'E'];
+
   return (
-    <div>
-      <div className="contact__header">
-        <h2 className="contact__header__title">CONTACT ME</h2>
-      </div>
+    <>
       <div className="contact__container">
-        <form className="contact__container__form">
-          <input placeholder="lastname"></input>
-          <input placeholder="name"></input>
-          <input placeholder="email"></input>
-          <textarea rows={15} cols={33} placeholder="votre demande ici"></textarea>
-          <button>Envoyer</button>
-        </form>
-        <div className="contact__container__infos">
-          <p>Mon adresse mail</p>
-          <p>mon telephone</p>
-          <div className="contact__container__infos__logo">
-            <p>github</p>
-            <p>linkdn</p>
-          </div>
-        </div>
+        <p className="contact__container__title" ref={titleRef}>
+          {titleName.split(' ').map((word, index) => (
+            <div className="contact__container__title__name" key={index}>
+              {word.split('').map((letter, index) => (
+                <span
+                  className="contact__container__title__name--letter"
+                  key={index}
+                  style={{
+                    transform:
+                      !isVisible && vowel.includes(letter)
+                        ? `translateY(-20px)`
+                        : `translateY(0)`,
+                    transitionDelay: isVisible ? `${index / 10}s` : '',
+                    opacity: !isVisible ? '0' : '1',
+                  }}>
+                  {letter}
+                </span>
+              ))}
+            </div>
+          ))}
+        </p>
       </div>
-    </div>
+      <div className="contact__infos">
+        <LogoResume className="contact__infos__icon" />
+        <LogoMail className="contact__infos__icon" />
+        <LogoLinkedin className="contact__infos__icon" />
+        <LogoGithub className="contact__infos__icon" />
+      </div>
+    </>
   );
 };
 

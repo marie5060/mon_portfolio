@@ -1,15 +1,18 @@
 .contact {
   background-color: #204f4f;
   transition: 1s;
-  &__header {
+  display: flex;
+  flex-direction: column;
+  &__container {
+    position: relative;
     &::before {
       content: '';
       position: absolute;
       height: 14vw;
       width: 16vw;
       border-radius: 50%;
-      background-color: #95b7b1;
-      right: 5vw;
+      background-color: #122625;
+      left: 5vw;
       top: 4vw;
       z-index: -1;
     }
@@ -19,80 +22,47 @@
       height: 11vw;
       width: 14vw;
       border-radius: 50%;
-      background-color: #122625;
-      right: 12vw;
+      background-color: #5d9087;
+      left: 12vw;
       top: 2vw;
       z-index: 2;
     }
     &__title {
       position: relative;
-      color: #fdeded;
+      color: #95b7b1;
+      display: flex;
       font-size: 6vw;
       font-weight: 400;
       font-family: Font_title;
       padding-top: 4vw;
       padding-left: 18vw;
       z-index: 6;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 18vw;
       &::before {
         content: '';
         position: absolute;
         height: 6vw;
         width: 7vw;
         border-radius: 50%;
-        background-color: #5d9087;
+        background-color: #95b7b1;
         top: 11vw;
-        right: 16vw;
-        z-index: 4;
+        left: 16vw;
+        z-index: -4;
+      }
+      &__name {
+        &--letter {
+          transition: 1s ease-in-out;
+        }
       }
     }
   }
-  &__container {
+  &__infos {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 7vw;
-    &__form {
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5vw;
+    padding-top: 20vw;
 
-      input,
-      textarea {
-        width: 80%;
-        margin: 1rem 2rem;
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        border: 1px solid #c3c7c8;
-      }
-      button {
-        margin-top: 2rem;
-        width: 12vw;
-        border-radius: 10px;
-        border: 1px solid #c3c7c8;
-        padding: 0.5rem 0;
-        background-color: white;
-        font-weight: bolder;
-      }
-    }
-    &__infos {
-      font-family: Font_main;
-      font-size: 15px;
-      color: #fdeded;
-      padding-top: 9vw;
-      padding-right: 1vw;
-      width: 15%;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5vw;
-      text-align: center;
-      &__logo {
-        display: flex;
-        justify-content: space-around;
-      }
+    &__icon {
+      width: 100px;
+      height: 100px;
     }
   }
 }

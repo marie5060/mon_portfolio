@@ -53,7 +53,7 @@ const AboutMe = () => {
   }, [count, isVisible, lauchCount]);
 
   return (
-    <div>
+    <>
       <div className="aboutMe__container">
         <p className="aboutMe__container__title">
           {titleName.split(' ').map((word, index) => (
@@ -87,7 +87,7 @@ const AboutMe = () => {
           <img className="aboutMe__infos__picture" alt="" src={moi} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

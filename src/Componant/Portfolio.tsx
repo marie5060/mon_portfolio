@@ -31,7 +31,7 @@ const Portfolio = () => {
   //     },
   //   ];
   return (
-    <div className="portfolio">
+    <>
       <div className="portfolio__title">
         <p className="portfolio__title__p">PORTFOLIO</p>
       </div>
@@ -45,7 +45,7 @@ const Portfolio = () => {
           <Polaroid key={project.idProject} project={project} />
         ))} */}
       </div>
-    </div>
+    </>
   );
 };
 
