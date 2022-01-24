@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
 
-import UseElementOnScreen from '../hooks/UseElementOnScreen';
+import { ReactComponent as LogoExpressjs } from '../../assets/LogoExpressjs.svg';
 import { ReactComponent as LogoFigma } from '../../assets/LogoFigma.svg';
 import { ReactComponent as LogoGit } from '../../assets/LogoGit.svg';
 import { ReactComponent as LogoGithub } from '../../assets/LogoGithub.svg';
 import { ReactComponent as LogoMySql } from '../../assets/LogoMySql.svg';
 import { ReactComponent as LogoNodeJs } from '../../assets/LogoNodeJs.svg';
+import { ReactComponent as LogoPostman } from '../../assets/LogoPostman.svg';
 import { ReactComponent as LogoReact } from '../../assets/LogoReact.svg';
 import { ReactComponent as LogoSass } from '../../assets/LogoSass.svg';
 import { ReactComponent as LogoTypescript } from '../../assets/LogoTypescript.svg';
-import { ReactComponent as LogoExpressjs } from '../../assets/LogoExpressjs.svg';
-import { ReactComponent as LogoPostman } from '../../assets/LogoPostman.svg';
+import UseElementOnScreen from '../hooks/UseElementOnScreen';
 
 const Tech = () => {
   const titleRef = useRef<HTMLDivElement>(null);

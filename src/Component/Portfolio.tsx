@@ -1,4 +1,5 @@
 import React from 'react';
+
 import blind from '../../assets/blind.png';
 import LiveUp from '../../assets/LiveUp1.jpg';
 import IProject from '../interfaces/IProject';
