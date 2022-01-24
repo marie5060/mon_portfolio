@@ -22,9 +22,11 @@
 .polaroid {
   text-align: center;
   background-color: white;
-  font-size: 18px;
-  padding: 10px 10px 60px 10px;
-  margin: 0 0 35px 35px;
-  width: 250px;
+  padding: 10px;
+  width: 20%;
   color: #8b8b8b;
+  p {
+    margin: 1em 0;
+    font-size: 2vw;
+  }
 }

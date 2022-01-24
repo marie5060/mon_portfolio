@@ -4,12 +4,12 @@ import AboutMe from './Componant/AboutMe';
 import Contact from './Componant/Contact';
 import Home from './Componant/Home';
 import Portfolio from './Componant/Portfolio';
+import Tech from './Componant/Tech';
 
 function App() {
   const [heightScreen, setHeightScreen] = useState(0);
   const [scrollValue, setScrollValue] = useState(0);
   const [activeScroll, setActiveScroll] = useState(true);
-  console.log(scrollValue);
 
   useEffect(() => {
     setHeightScreen(window.innerHeight);
@@ -22,6 +22,7 @@ function App() {
     { className: 'home', component: <Home /> },
     { className: 'aboutMe', component: <AboutMe /> },
     { className: 'portfolio', component: <Portfolio /> },
+    { className: 'tech', component: <Tech /> },
     { className: 'contact', component: <Contact /> },
   ];
   const scroll = (valueScroll: number, index: number) => {
