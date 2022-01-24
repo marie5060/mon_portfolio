@@ -1,5 +1,7 @@
 import React from 'react';
 
+import lfpll from '../../assets/lfpll2.png';
+import manomano from '../../assets/manomano.jpg';
 import blind from '../../assets/blind.png';
 import LiveUp from '../../assets/LiveUp1.jpg';
 import IProject from '../interfaces/IProject';
@@ -17,16 +19,16 @@ const Portfolio = () => {
       title: 'Hackathon Live Up',
       image: LiveUp,
     },
-    // {
-    //   idProject: 3,
-    //   title: 'Hackathon ManoMano',
-    //   image: Manomano,
-    // },
-    // {
-    //   idProject: 4,
-    //   title: 'Les Femmes Prennent Le Large',
-    //   image: LFPLL,
-    // },
+    {
+      idProject: 3,
+      title: 'Hackathon ManoMano',
+      image: manomano,
+    },
+    {
+      idProject: 4,
+      title: 'Les Femmes Prennent Le Large',
+      image: lfpll,
+    },
   ];
   return (
     <>
