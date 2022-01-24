@@ -55,10 +55,10 @@ const Contact = () => {
           <LogoMail className="contact__infos__icon" />
         </a>
         <a href="https://github.com/marie5060">
-          <LogoLinkedin className="contact__infos__icon" />
+          <LogoGithub className="contact__infos__icon" />
         </a>
         <a href="https://www.linkedin.com/in/marie-lain%C3%A9-a12924222/">
-          <LogoGithub className="contact__infos__icon" />
+          <LogoLinkedin className="contact__infos__icon" />
         </a>
       </div>
     </>
