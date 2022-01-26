@@ -20,7 +20,7 @@ const AboutMe = () => {
   );
 
   const presentation = [
-    `En reconversion professionelle, et après une formation de developpement web et web mobile au sein de la Wild Code School d'Anglet, me voilà à prendre mon envol. De nature enthousiaste, volontaire pour appronfondir mes connaissances et aimant le travail d'équipe, je suis à la recherche d'un stage d'une durée de 4 a 6 mois à compter du 14 février 2022, pouvant me permettre de m'épanouir et d'avancer main dans la main avec ma future entreprise.`,
+    `En reconversion professionnelle, j'ai suivi une formation de développeuse Web et Web Mobile au sein de la Wild Code School d'Anglet. Enthousiaste, volontaire et aimant le travail d'équipe, je suis à la recherche d'un stage à compter du 14 février 2022, afin de m'épanouir et d'avancer main dans la main avec ma future entreprise.`,
   ];
 
   const character = ['!', ',', '.', '?'];

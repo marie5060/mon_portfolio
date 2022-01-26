@@ -47,7 +47,7 @@ const Contact = () => {
         </p>
       </div>
       <div className="contact__infos">
-        <a href={CV} download="Marie_Emeline_LAINE_CV.pdf">
+        <a href={CV} download>
           <LogoResume className="contact__infos__icon" />
         </a>
 
