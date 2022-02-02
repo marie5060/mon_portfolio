@@ -4,18 +4,18 @@ import UseElementOnScreen from '../hooks/UseElementOnScreen';
 
 const Home = () => {
   const titleRef = useRef<HTMLDivElement>(null);
-  const isVisible = UseElementOnScreen(
+  const isVisible: boolean = UseElementOnScreen(
     {
-      root: null,
-      marginRoot: '0px',
-      treshold: 0.8,
+      rootElement: undefined,
+      rootMargin: '0px',
+      threshold: 0.8,
     },
     titleRef,
   );
 
-  const titleName = 'MARIE EMELINE LAINE';
-  const titleDev = 'DEVELOPPEUSE WEB';
-  const vowel = ['A', 'E', 'I', 'O', 'U'];
+  const titleName: string = 'MARIE EMELINE LAINE';
+  const titleDev: string = 'DEVELOPPEUSE WEB';
+  const movingLetters: string[] = ['A', 'E', 'I', 'O', 'U'];
 
   return (
     <>
@@ -29,7 +29,7 @@ const Home = () => {
                   key={index}
                   style={{
                     transform:
-                      !isVisible && vowel.includes(letter)
+                      !isVisible && movingLetters.includes(letter)
                         ? `translateY(-20px)`
                         : `translateY(0)`,
                     transitionDelay: isVisible ? `${index / 10}s` : '',

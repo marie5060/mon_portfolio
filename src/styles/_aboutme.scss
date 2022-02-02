@@ -1,28 +1,18 @@
 .aboutMe {
-  background-color: #95b7b1;
+  background-color: $colorPrimaryLight;
   transition: 1s;
   &__container {
     &::before {
-      content: '';
-      position: absolute;
-      height: 14vw;
-      width: 16vw;
-      border-radius: 50%;
-      background-color: #122625;
+      background-color: $colorPrimaryDarker;
       left: 5vw;
       top: 4vw;
-      z-index: -1;
+      @include bigBall;
     }
     &::after {
-      content: '';
-      position: absolute;
-      height: 11vw;
-      width: 14vw;
-      border-radius: 50%;
-      background-color: #5d9087;
+      background-color: $colorPrimary;
       left: 12vw;
       top: 2vw;
-      z-index: 2;
+      @include mediumBall;
     }
     &__title {
       position: relative;
@@ -35,15 +25,10 @@
       padding-left: 18vw;
       z-index: 6;
       &::before {
-        content: '';
-        position: absolute;
-        height: 6vw;
-        width: 7vw;
-        border-radius: 50%;
-        background-color: #204f4f;
+        background-color: $colorPrimaryDark;
         top: 11vw;
         left: 16vw;
-        z-index: 4;
+        @include tinyBall;
       }
       &__name {
         &--letter {

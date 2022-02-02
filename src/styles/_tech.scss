@@ -1,35 +1,30 @@
 .tech {
-  background-color: #95b7b1;
+  background-color: $colorPrimaryLight;
   transition: 1s;
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: center;
+
   &__container {
     z-index: 6;
+    display: flex;
+    flex-direction: column-reverse;
     position: relative;
+    justify-content: space-between;
     &::before {
-      content: '';
-      position: absolute;
-      height: 14vw;
-      width: 16vw;
-      border-radius: 50%;
-      background-color: #122625;
+      background-color: $colorPrimaryDarker;
       left: 5vw;
       bottom: 4vw;
-      z-index: -1;
+      @include bigBall;
     }
     &::after {
-      content: '';
-      position: absolute;
-      height: 11vw;
-      width: 14vw;
-      border-radius: 50%;
-      background-color: #5d9087;
+      background-color: $colorPrimary;
       left: 12vw;
       bottom: 2vw;
-      z-index: 2;
+      @include mediumBall;
     }
-    &__title {
+    &__name {
       position: relative;
+      align-items: flex-end;
       color: #1c2b2a;
       display: flex;
       font-size: 6vw;
@@ -39,32 +34,38 @@
       padding-bottom: 4vw;
       z-index: 6;
       &::before {
-        content: '';
-        position: absolute;
-        height: 6vw;
-        width: 7vw;
-        border-radius: 50%;
-        background-color: #204f4f;
+        background-color: $colorPrimaryDark;
         bottom: 11vw;
         left: 16vw;
-        z-index: 4;
-        &__name {
-          &--letter {
-            transition: 1s ease-in-out;
-          }
+        @include tinyBall;
+      }
+
+      &__word {
+        font-size: 6vw;
+        font-weight: 400;
+        margin: 0 1rem;
+        display: flex;
+        &--letter {
+          transition: 1s ease-in-out;
         }
       }
     }
-  }
-  &__icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: auto;
-    &__icon {
-      width: 120px;
-      height: 120px;
-      fill: #204f4f;
+    &__icons {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style-type: none;
+      }
+
+      & > li {
+        margin: auto;
+      }
     }
   }
 }

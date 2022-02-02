@@ -1,45 +1,50 @@
 import React, { useRef } from 'react';
 
-import { ReactComponent as LogoExpressjs } from '../../assets/LogoExpressjs.svg';
-import { ReactComponent as LogoFigma } from '../../assets/LogoFigma.svg';
-import { ReactComponent as LogoGit } from '../../assets/LogoGit.svg';
-import { ReactComponent as LogoGithub } from '../../assets/LogoGithub.svg';
-import { ReactComponent as LogoMySql } from '../../assets/LogoMySql.svg';
-import { ReactComponent as LogoNodeJs } from '../../assets/LogoNodeJs.svg';
-import { ReactComponent as LogoPostman } from '../../assets/LogoPostman.svg';
-import { ReactComponent as LogoReact } from '../../assets/LogoReact.svg';
-import { ReactComponent as LogoSass } from '../../assets/LogoSass.svg';
-import { ReactComponent as LogoTypescript } from '../../assets/LogoTypescript.svg';
 import UseElementOnScreen from '../hooks/UseElementOnScreen';
+import Logo from './Logo';
+
+const techList = [
+  { name: 'CSS', icon: 'logos-css' },
+  { name: 'HTML', icon: 'logos-html' },
+  { name: 'Javascript', icon: 'logos-javascript' },
+  { name: 'React', icon: 'logos-react' },
+  { name: 'NodeJs', icon: 'logos-nodejs' },
+  { name: 'TS', icon: 'logos-typescript' },
+  { name: 'Github', icon: 'logos-github' },
+  { name: 'Sass', icon: 'logos-sass' },
+  { name: 'Postman', icon: 'logos-postman' },
+  { name: 'Figma', icon: 'logos-figma' },
+  { name: 'mysql', icon: 'logos-mysql' },
+];
 
 const Tech = () => {
   const titleRef = useRef<HTMLDivElement>(null);
 
-  const isVisible = UseElementOnScreen(
+  const isVisible: boolean = UseElementOnScreen(
     {
-      root: null,
-      marginRoot: '0px',
-      treshold: 0.8,
+      rootElement: undefined,
+      rootMargin: '0px',
+      threshold: 0.8,
     },
     titleRef,
   );
-  const titleName = 'MY TECH';
+  const titleName: string = 'MY TECH';
 
-  const vowel = ['M', 'C', 'E', 'Y', 'T'];
+  const movingLetters: string[] = ['T', 'E', 'H'];
 
   return (
     <>
       <div className="tech__container">
-        <p className="tech__container__title" ref={titleRef}>
+        <p className="tech__container__name" ref={titleRef}>
           {titleName.split(' ').map((word, index) => (
-            <div className="tech__container__title__name" key={index}>
+            <div className="tech__container__name__word" key={index}>
               {word.split('').map((letter, index) => (
                 <span
-                  className="tech__container__title__name--letter"
+                  className="tech__container__name__word--letter"
                   key={index}
                   style={{
                     transform:
-                      !isVisible && vowel.includes(letter)
+                      !isVisible && movingLetters.includes(letter)
                         ? `translateY(-20px)`
                         : `translateY(0)`,
                     transitionDelay: isVisible ? `${index / 10}s` : '',
@@ -51,18 +56,15 @@ const Tech = () => {
             </div>
           ))}
         </p>
-      </div>
-      <div className="tech__icons">
-        <LogoFigma className="tech__icons__icon" />
-        <LogoGit className="tech__icons__icon" />
-        <LogoGithub className="tech__icons__icon" />
-        <LogoMySql className="tech__icons__icon" />
-        <LogoNodeJs className="tech__icons__icon" />
-        <LogoReact className="tech__icons__icon" />
-        <LogoSass className="tech__icons__icon" />
-        <LogoTypescript className="tech__icons__icon" />
-        <LogoExpressjs className="tech__icons__icon" />
-        <LogoPostman className="tech__icons__icon" />
+        <div className="tech__container__icons">
+          <ul className="tech__container__icons__list">
+            {techList.map((tech, index) => (
+              <li key={index}>
+                <Logo name={tech.name} icon={tech.icon} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );

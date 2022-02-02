@@ -1,0 +1,26 @@
+@mixin bigBall {
+  content: '';
+  position: absolute;
+  height: 14vw;
+  width: 16vw;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@mixin mediumBall {
+  content: '';
+  position: absolute;
+  height: 11vw;
+  width: 14vw;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+@mixin tinyBall {
+  content: '';
+  position: absolute;
+  height: 6vw;
+  width: 7vw;
+  border-radius: 50%;
+  z-index: 4;
+}

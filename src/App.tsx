@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
-import AboutMe from './Component/AboutMe';
-import Contact from './Component/Contact';
-import Home from './Component/Home';
-import Portfolio from './Component/Portfolio';
-import Tech from './Component/Tech';
+import AboutMe from './components/AboutMe';
+import Contact from './components/Contact';
+import Home from './components/Home';
+import Portfolio from './components/Portfolio';
+import Tech from './components/Tech';
+
+type Section = {
+  className: string;
+  component: React.ComponentType;
+};
 
 function App() {
-  const [heightScreen, setHeightScreen] = useState(0);
-  const [scrollValue, setScrollValue] = useState(0);
-  const [activeScroll, setActiveScroll] = useState(true);
+  const [heightScreen, setHeightScreen] = useState<number>(0);
+  const [scrollValue, setScrollValue] = useState<number>(0);
+  const [activeScroll, setActiveScroll] = useState<boolean>(true);
 
   useEffect(() => {
     setHeightScreen(window.innerHeight);
@@ -18,16 +23,16 @@ function App() {
     });
   }, []);
 
-  const section = [
-    { className: 'home', component: <Home /> },
-    { className: 'aboutMe', component: <AboutMe /> },
-    { className: 'portfolio', component: <Portfolio /> },
-    { className: 'tech', component: <Tech /> },
-    { className: 'contact', component: <Contact /> },
+  const sections: Section[] = [
+    { className: 'home', component: Home },
+    { className: 'aboutMe', component: AboutMe },
+    { className: 'portfolio', component: Portfolio },
+    { className: 'tech', component: Tech },
+    { className: 'contact', component: Contact },
   ];
   const scroll = (valueScroll: number, index: number) => {
     if (scrollValue >= 0) {
-      if (valueScroll > 0 && index < section.length - 1) {
+      if (valueScroll > 0 && index < sections.length - 1) {
         setScrollValue(index + 1);
         setActiveScroll(false);
       } else {
@@ -47,16 +52,16 @@ function App() {
       style={{
         height: `${heightScreen}px`,
       }}>
-      {section.map((el, index) => (
+      {sections.map((section, index) => (
         <div
           key={index}
-          className={el.className}
+          className={section.className}
           style={{
             height: `${heightScreen}px`,
             transform: `translateY(-${heightScreen * scrollValue}px)`,
           }}
           onWheel={(e) => activeScroll && scroll(e.deltaY, index)}>
-          {el.component}
+          {<section.component />}
         </div>
       ))}
     </div>

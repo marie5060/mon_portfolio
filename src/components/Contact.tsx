@@ -10,16 +10,16 @@ import UseElementOnScreen from '../hooks/UseElementOnScreen';
 const Contact = () => {
   const titleRef = useRef<HTMLDivElement>(null);
 
-  const isVisible = UseElementOnScreen(
+  const isVisible: boolean = UseElementOnScreen(
     {
-      root: null,
-      marginRoot: '0px',
-      treshold: 0.8,
+      rootElement: undefined,
+      rootMargin: '0px',
+      threshold: 0.8,
     },
     titleRef,
   );
-  const titleName = 'CONTACT ME';
-  const vowel = ['C', 'N', 'A', 'T', 'E'];
+  const titleName: string = 'CONTACT ME';
+  const movingLetters: string[] = ['C', 'N', 'A', 'T', 'E'];
 
   return (
     <>
@@ -33,7 +33,7 @@ const Contact = () => {
                   key={index}
                   style={{
                     transform:
-                      !isVisible && vowel.includes(letter)
+                      !isVisible && movingLetters.includes(letter)
                         ? `translateY(-20px)`
                         : `translateY(0)`,
                     transitionDelay: isVisible ? `${index / 10}s` : '',

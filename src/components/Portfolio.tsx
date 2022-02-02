@@ -16,7 +16,7 @@ const Portfolio = () => {
     },
     {
       idProject: 2,
-      title: 'Hackathon Live Up',
+      title: 'Hackathon LiveUp',
       image: LiveUp,
     },
     {

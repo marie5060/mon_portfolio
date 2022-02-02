@@ -6,34 +6,26 @@ import UseElementOnScreen from '../hooks/UseElementOnScreen';
 
 const AboutMe = () => {
   const textRef = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(0);
-  const [lauchCount, setLaunchCount] = useState(false);
-  const [text, setText] = useState('');
+  const [count, setCount] = useState<number>(0);
+  const [lauchCount, setLaunchCount] = useState<boolean>(false);
+  const [text, setText] = useState<string>('');
 
-  const isVisible = UseElementOnScreen(
+  const isVisible: boolean = UseElementOnScreen(
     {
-      root: null,
-      marginRoot: '0px',
-      treshold: 0.8,
+      rootElement: undefined,
+      rootMargin: '0px',
+      threshold: 0.8,
     },
     textRef,
   );
 
-  const presentation = [
+  const presentation: string[] = [
     `En reconversion professionnelle, j'ai suivi une formation de développeuse Web et Web Mobile au sein de la Wild Code School d'Anglet. Enthousiaste, volontaire et aimant le travail d'équipe, je suis à la recherche d'un stage à compter du 14 février 2022, afin de m'épanouir et d'avancer main dans la main avec ma future entreprise.`,
   ];
 
-  const character = ['!', ',', '.', '?'];
-  const titleName = 'ABOUT ME';
-  const vowel = ['A', 'O', 'B', 'M'];
-
-  // const projects: IProject[] = [
-  //   {
-  //     idProject: 1,
-  //     title: 'en recherche de stage',
-  //     image: aboutMe,
-  //   },
-  // ];
+  const character: string[] = ['!', ',', '.', '?'];
+  const titleName: string = 'ABOUT ME';
+  const movingLetters: string[] = ['A', 'O', 'B', 'M'];
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -70,7 +62,7 @@ const AboutMe = () => {
                   key={index}
                   style={{
                     transform:
-                      !isVisible && vowel.includes(letter)
+                      !isVisible && movingLetters.includes(letter)
                         ? `translateY(-20px)`
                         : `translateY(0)`,
                     transitionDelay: isVisible ? `${index / 10}s` : '',

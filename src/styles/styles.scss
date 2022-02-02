@@ -1,3 +1,6 @@
+@import './variables.scss';
+@import './mixins.scss';
+
 @import './settings';
 @import './aboutme';
 @import './contact';
@@ -6,3 +9,4 @@
 @import '../app.scss';
 @import './polaroid.scss';
 @import './tech.scss';
+@import './logo.scss';
