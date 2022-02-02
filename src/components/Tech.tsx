@@ -34,37 +34,41 @@ const Tech = () => {
 
   return (
     <>
-      <div className="tech__container">
-        <p className="tech__container__name" ref={titleRef}>
-          {titleName.split(' ').map((word, index) => (
-            <div className="tech__container__name__word" key={index}>
-              {word.split('').map((letter, index) => (
-                <span
-                  className="tech__container__name__word--letter"
-                  key={index}
-                  style={{
-                    transform:
-                      !isVisible && movingLetters.includes(letter)
-                        ? `translateY(-20px)`
-                        : `translateY(0)`,
-                    transitionDelay: isVisible ? `${index / 10}s` : '',
-                    opacity: !isVisible ? '0' : '1',
-                  }}>
-                  {letter}
-                </span>
-              ))}
-            </div>
-          ))}
-        </p>
-        <div className="tech__container__icons">
-          <ul className="tech__container__icons__list">
-            {techList.map((tech, index) => (
-              <li key={index}>
-                <Logo name={tech.name} icon={tech.icon} />
-              </li>
+      <p className="tech__name">
+        {titleName.split(' ').map((word, index) => (
+          <div className="tech__name__word" key={index}>
+            {word.split('').map((letter, index) => (
+              <span
+                className="tech__name__word--letter"
+                key={index}
+                style={{
+                  transform:
+                    !isVisible && movingLetters.includes(letter)
+                      ? `translateY(-20px)`
+                      : `translateY(0)`,
+                  transitionDelay: isVisible ? `${index / 10}s` : '',
+                  opacity: !isVisible ? '0' : '1',
+                }}>
+                {letter}
+              </span>
             ))}
-          </ul>
-        </div>
+          </div>
+        ))}
+      </p>
+      <div className="tech__icons" ref={titleRef}>
+        <ul className="tech__icons__list">
+          {techList.map((tech, index) => (
+            <li
+              key={index}
+              style={{
+                transform: !isVisible ? `translateY(40px)` : `translateY(0)`,
+                opacity: !isVisible ? '0' : '1',
+                transitionDelay: index % 2 === 0 ? '0.3s' : '1s',
+              }}>
+              <Logo name={tech.name} icon={tech.icon} />
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );

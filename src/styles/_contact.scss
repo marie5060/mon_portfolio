@@ -3,49 +3,52 @@
   transition: 1s;
   display: flex;
   flex-direction: column;
-  &__container {
+  position: relative;
+  &::before {
+    content: '';
+    background-color: $colorPrimaryDarker;
+    left: 5vw;
+    top: 4vw;
+    @include bigBall;
+  }
+  &::after {
+    background-color: $colorPrimary;
+    left: 12vw;
+    top: 2vw;
+    @include mediumBall;
+  }
+  &__name {
     position: relative;
+    color: #95b7b1;
+    display: flex;
+    font-size: 6vw;
+    font-weight: 400;
+    font-family: Font_title;
+    padding-top: 4vw;
+    padding-left: 18vw;
+    z-index: 6;
     &::before {
-      content: '';
-
-      background-color: $colorPrimaryDarker;
-      left: 5vw;
-      top: 4vw;
-      @include bigBall;
+      background-color: $colorPrimaryLight;
+      top: 11vw;
+      left: 16vw;
+      @include tinyBall;
     }
-    &::after {
-      background-color: $colorPrimary;
-      left: 12vw;
-      top: 2vw;
-      @include mediumBall;
-    }
-    &__title {
-      position: relative;
-      color: #95b7b1;
-      display: flex;
+    &__word {
       font-size: 6vw;
       font-weight: 400;
-      font-family: Font_title;
-      padding-top: 4vw;
-      padding-left: 18vw;
-      z-index: 6;
-      &::before {
-        background-color: $colorPrimaryLight;
-        top: 11vw;
-        left: 16vw;
-        @include tinyBall;
-      }
-      &__name {
-        &--letter {
-          transition: 1s ease-in-out;
-        }
+      margin: 0 1rem;
+      display: flex;
+      &--letter {
+        transition: 1s ease-in-out;
       }
     }
   }
+
   &__infos {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 20vw;
+    align-items: center;
+    height: 80vh;
 
     &__icon {
       width: 100px;

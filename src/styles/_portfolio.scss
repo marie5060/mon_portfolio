@@ -4,7 +4,7 @@
   height: 100%;
   display: grid;
   grid-template-rows: 1fr 2fr 1.5fr;
-  &__title {
+  &__name {
     grid-area: 5/1;
     position: relative;
     color: #95b7b1;

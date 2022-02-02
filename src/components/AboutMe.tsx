@@ -52,39 +52,37 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="aboutMe__container">
-        <p className="aboutMe__container__title">
-          {titleName.split(' ').map((word, index) => (
-            <div className="aboutMe__container__title__name" key={index}>
-              {word.split('').map((letter, index) => (
-                <span
-                  className="aboutMe__container__title__name--letter"
-                  key={index}
-                  style={{
-                    transform:
-                      !isVisible && movingLetters.includes(letter)
-                        ? `translateY(-20px)`
-                        : `translateY(0)`,
-                    transitionDelay: isVisible ? `${index / 10}s` : '',
-                    opacity: !isVisible ? '0' : '1',
-                  }}>
-                  {letter}
-                </span>
-              ))}
-            </div>
-          ))}
-        </p>
-
-        <div className="aboutMe__infos">
-          <div className="aboutMe__infos__presentation" ref={textRef}>
-            <p className="aboutMe__infos__presentation__text">
-              {text}
-              <span className="aboutMe__infos__presentation__text--bar">|</span>
-            </p>
+      <p className="aboutMe__name">
+        {titleName.split(' ').map((word, index) => (
+          <div className="aboutMe__name__word" key={index}>
+            {word.split('').map((letter, index) => (
+              <span
+                className="aboutMe__name__word--letter"
+                key={index}
+                style={{
+                  transform:
+                    !isVisible && movingLetters.includes(letter)
+                      ? `translateY(-20px)`
+                      : `translateY(0)`,
+                  transitionDelay: isVisible ? `${index / 10}s` : '',
+                  opacity: !isVisible ? '0' : '1',
+                }}>
+                {letter}
+              </span>
+            ))}
           </div>
+        ))}
+      </p>
 
-          <img className="aboutMe__infos__picture" alt="" src={aboutMe} />
+      <div className="aboutMe__infos">
+        <div className="aboutMe__infos__presentation" ref={textRef}>
+          <p className="aboutMe__infos__presentation__text">
+            {text}
+            <span className="aboutMe__infos__presentation__text--bar">|</span>
+          </p>
         </div>
+
+        <img className="aboutMe__infos__picture" alt="" src={aboutMe} />
       </div>
     </>
   );

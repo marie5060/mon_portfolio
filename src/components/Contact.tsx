@@ -23,29 +23,28 @@ const Contact = () => {
 
   return (
     <>
-      <div className="contact__container">
-        <p className="contact__container__title" ref={titleRef}>
-          {titleName.split(' ').map((word, index) => (
-            <div className="contact__container__title__name" key={index}>
-              {word.split('').map((letter, index) => (
-                <span
-                  className="contact__container__title__name--letter"
-                  key={index}
-                  style={{
-                    transform:
-                      !isVisible && movingLetters.includes(letter)
-                        ? `translateY(-20px)`
-                        : `translateY(0)`,
-                    transitionDelay: isVisible ? `${index / 10}s` : '',
-                    opacity: !isVisible ? '0' : '1',
-                  }}>
-                  {letter}
-                </span>
-              ))}
-            </div>
-          ))}
-        </p>
-      </div>
+      <p className="contact__name" ref={titleRef}>
+        {titleName.split(' ').map((word, index) => (
+          <div className="contact__name__word" key={index}>
+            {word.split('').map((letter, index) => (
+              <span
+                className="contact__name__word--letter"
+                key={index}
+                style={{
+                  transform:
+                    !isVisible && movingLetters.includes(letter)
+                      ? `translateY(-20px)`
+                      : `translateY(0)`,
+                  transitionDelay: isVisible ? `${index / 10}s` : '',
+                  opacity: !isVisible ? '0' : '1',
+                }}>
+                {letter}
+              </span>
+            ))}
+          </div>
+        ))}
+      </p>
+
       <div className="contact__infos">
         <a href={CV} download>
           <LogoResume className="contact__infos__icon" />
