@@ -53,10 +53,13 @@ const Contact = () => {
         <a href="mailto:marie.emlaine@gmail.com">
           <LogoMail className="contact__infos__icon" />
         </a>
-        <a href="https://github.com/marie5060" target="_blank">
+        <a href="https://github.com/marie5060" target="_blank" rel="noreferrer">
           <LogoGithub className="contact__infos__icon" />
         </a>
-        <a href="https://www.linkedin.com/in/marie-lain%C3%A9-a12924222/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/marie-lain%C3%A9-a12924222/"
+          target="_blank"
+          rel="noreferrer">
           <LogoLinkedin className="contact__infos__icon" />
         </a>
       </div>

@@ -60,17 +60,27 @@ function App() {
       }}>
       {scrollValue === 0 && firstPageVisible && (
         <div className="app__menu">
-          <div onClick={() => setScrollValue(1)}>About me</div>
-          <div onClick={() => setScrollValue(2)}>Portfolio</div>
-          <div onClick={() => setScrollValue(3)}>Tech</div>
-          <div onClick={() => setScrollValue(4)}>Contact</div>
+          <div onClick={() => setScrollValue(1)} role="presentation">
+            About me
+          </div>
+          <div onClick={() => setScrollValue(2)} role="presentation">
+            Portfolio
+          </div>
+          <div onClick={() => setScrollValue(3)} role="presentation">
+            Tech
+          </div>
+          <div onClick={() => setScrollValue(4)} role="presentation">
+            Contact
+          </div>
         </div>
       )}
       {scrollValue > 0 && (
         <div className="app__menu--right">
-          {sections.map((section) => (
+          {sections.map((section, index) => (
             <div
+              key={index}
               onClick={() => setScrollValue(section.scrollNumber)}
+              role="presentation"
               className={`app__menu--right__ronron app__menu--right__ronron${
                 section.scrollNumber === scrollValue
                   ? '--selected'
