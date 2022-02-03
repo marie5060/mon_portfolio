@@ -1,5 +1,13 @@
 .style {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   margin: 20px;
+  @media screen and (max-width: $breakpoint-largest) {
+    height: 70px;
+    width: 70px;
+  }
+  @media screen and (max-width: $breakpoint-extrasmall) {
+    height: 50px;
+    width: 50px;
+  }
 }
