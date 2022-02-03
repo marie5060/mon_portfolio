@@ -1,6 +1,7 @@
 .app {
   overflow: hidden;
   position: relative;
+
   &__menu {
     display: flex;
     position: absolute;
@@ -13,6 +14,23 @@
     width: 50vw;
     justify-content: space-between;
     cursor: pointer;
+
+    @media screen and (max-width: $breakpoint-extralarge) {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      right: 50px;
+      font-size: 3vw;
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+      right: 20px;
+      font-size: 4vw;
+    }
+    @media screen and (max-width: $breakpoint-extrasmall) {
+      font-size: 5vw;
+    }
 
     &--right {
       position: absolute;
@@ -32,6 +50,9 @@
         border-radius: 50%;
         z-index: 10;
         margin: 12px 0;
+        @media screen and (max-width: $breakpoint-smallest) {
+          display: none;
+        }
 
         &--light {
           background-color: $colorPrimaryLight;

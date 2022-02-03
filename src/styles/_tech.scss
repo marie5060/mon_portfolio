@@ -38,13 +38,19 @@
       bottom: 11vw;
       left: 16vw;
       @include tinyBall;
+      @media screen and (max-width: $breakpoint-medium) {
+        z-index: 0;
+      }
     }
 
     &__word {
       font-size: 6vw;
       font-weight: 400;
-      margin: 0 1rem;
+      margin: 0 1vw;
       display: flex;
+      @media screen and (max-width: $breakpoint-medium) {
+        font-size: 11vw;
+      }
       &--letter {
         transition: 1s ease-in-out;
       }
