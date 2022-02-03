@@ -21,8 +21,6 @@
     position: relative;
     color: #95b7b1;
     display: flex;
-    font-size: 6vw;
-    font-weight: 400;
     font-family: Font_title;
     padding-top: 4vw;
     padding-left: 18vw;
@@ -32,12 +30,19 @@
       top: 11vw;
       left: 16vw;
       @include tinyBall;
+      @media screen and (max-width: $breakpoint-medium) {
+        z-index: 0;
+      }
     }
     &__word {
       font-size: 6vw;
       font-weight: 400;
-      margin: 0 1rem;
+      margin: 0 1vh;
       display: flex;
+      @media screen and (max-width: $breakpoint-medium) {
+        font-size: 11vw;
+      }
+
       &--letter {
         transition: 1s ease-in-out;
       }
@@ -50,10 +55,19 @@
     align-items: center;
     height: 80vh;
 
+    @media screen and (max-width: $breakpoint-small) {
+      flex-direction: column;
+    }
+
     &__icon {
       width: 100px;
       height: 100px;
       fill: $colorPrimaryLight;
+
+      @media screen and (max-width: $breakpoint-small) {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 }

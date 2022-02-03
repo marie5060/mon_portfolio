@@ -36,12 +36,21 @@
       top: 11vw;
       left: 16vw;
       @include tinyBall;
+
+      @media screen and (max-width: $breakpoint-medium) {
+        z-index: 0;
+      }
     }
     &__word {
       font-size: 6vw;
       font-weight: 400;
-      margin: 0 1rem;
+      margin: 0 1vw;
       display: flex;
+
+      @media screen and (max-width: $breakpoint-medium) {
+        font-size: 11vw;
+      }
+
       &--letter {
         transition: 1s ease-in-out;
       }
@@ -54,12 +63,27 @@
     align-items: center;
     height: 80vh;
     justify-content: space-evenly;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      flex-direction: column-reverse;
+    }
     &__presentation {
       width: 40%;
       font-family: Font_main;
       font-size: 2vw;
       display: flex;
       flex-wrap: wrap;
+
+      @media screen and (max-width: $breakpoint-medium) {
+        font-size: 2.5vw;
+        width: 60%;
+      }
+
+      @media screen and (max-width: $breakpoint-smallest) {
+        width: 60%;
+        font-size: 3vw;
+      }
+
       &__text {
         text-align: justify;
         &--cursor {
@@ -89,6 +113,10 @@
       max-width: 25%;
       height: auto;
       border-radius: 50%;
+
+      @media screen and (max-width: $breakpoint-extrasmall) {
+        max-width: 34%;
+      }
     }
   }
 }

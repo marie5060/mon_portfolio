@@ -1,36 +1,38 @@
 import React, { useRef } from 'react';
 
-import blind from '../../assets/blind.png';
-import lfpll from '../../assets/lfpll2.png';
-import LiveUp from '../../assets/LiveUp1.jpg';
-import manomano from '../../assets/manomano.jpg';
+// import music from '../../assets/music.svg';
+// import tools from '../../assets/tools.svg';
+// import surf from '../../assets/surf.svg';
+// import game from '../../assets/game.svg';
 import UseElementOnScreen from '../hooks/UseElementOnScreen';
-import IProject from '../interfaces/IProject';
-import Polaroid from './Polaroid';
 
 const Portfolio = () => {
-  const projects: IProject[] = [
-    {
-      idProject: 1,
-      title: 'Crash Blind Test',
-      image: blind,
-    },
-    {
-      idProject: 2,
-      title: 'Les Femmes Prennent Le Large',
-      image: lfpll,
-    },
-    {
-      idProject: 3,
-      title: 'Hackathon LiveUp',
-      image: LiveUp,
-    },
-    {
-      idProject: 4,
-      title: 'Hackathon ManoMano',
-      image: manomano,
-    },
-  ];
+  // const projects: IProject[] = [
+  //   {
+  //     idProject: 1,
+  //     title: 'Crash Blind Test',
+  //     image: game,
+  // text: Projet de Blind test musical avec la possibilité de jouer avec ses propres playlists grace à l'API Deezer.
+  //   },
+  //   {
+  //     idProject: 2,
+  //     title: 'Les Femmes Prennent Le Large',
+  //     image: surf,
+  //text: Premier projet avec un client, avec pour but de promouvoir les rencontres de surfeuses dans la pratique de leurs sport.
+  //   },
+  //   {
+  //     idProject: 3,
+  //     title: 'LiveUp',
+  //     image: music,
+  //text: Hackathon (32h) sur le thème de la musique. Nous avons effectué un site d'évènements musicaux.
+  //   },
+  //   {
+  //     idProject: 4,
+  //     title: 'ManoMano X Wild',
+  //     image: tools,
+  //text: Hackathon (48h) en partenariat avec ManoMano visant à améliorer l'experience utilisateur sur leur site.
+  //   },
+  // ];
   const titleRef = useRef<HTMLDivElement>(null);
 
   const isVisible: boolean = UseElementOnScreen(
@@ -65,12 +67,6 @@ const Portfolio = () => {
               </span>
             ))}
           </div>
-        ))}
-      </div>
-      <div className="portfolio__polaroids">
-        {/* Fait un map de ton tableau */}
-        {projects.map((project) => (
-          <Polaroid key={project.idProject} project={project} />
         ))}
       </div>
     </>
