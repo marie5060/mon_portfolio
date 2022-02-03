@@ -13,6 +13,7 @@ const Portfolio = () => {
   //     title: 'Crash Blind Test',
   //     image: game,
   // text: Projet de Blind test musical avec la possibilité de jouer avec ses propres playlists grace à l'API Deezer.
+  //link:"https://marie5060.github.io/Blind-Crash-Test/"
   //   },
   //   {
   //     idProject: 2,
@@ -25,12 +26,14 @@ const Portfolio = () => {
   //     title: 'LiveUp',
   //     image: music,
   //text: Hackathon (32h) sur le thème de la musique. Nous avons effectué un site d'évènements musicaux.
+  //link: https://aurelienbrethes.github.io/Liveup/
   //   },
   //   {
   //     idProject: 4,
   //     title: 'ManoMano X Wild',
   //     image: tools,
   //text: Hackathon (48h) en partenariat avec ManoMano visant à améliorer l'experience utilisateur sur leur site.
+
   //   },
   // ];
   const titleRef = useRef<HTMLDivElement>(null);
