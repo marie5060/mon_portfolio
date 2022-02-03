@@ -37,7 +37,7 @@ function App() {
     { className: 'contact', component: <Contact />, scrollNumber: 4 },
   ];
   const scroll = (valueScroll: number, index: number) => {
-    if (scrollValue >= 0) {
+    if (scrollValue >= 0 && window.innerWidth > 800) {
       if (valueScroll > 0 && index < sections.length - 1) {
         setScrollValue(index + 1);
         setActiveScroll(false);
@@ -53,58 +53,62 @@ function App() {
     }
   };
   return (
-    <div
-      className="app"
-      style={{
-        height: `${heightScreen}px`,
-      }}>
-      {scrollValue === 0 && firstPageVisible && (
-        <div className="app__menu">
-          <div onClick={() => setScrollValue(1)} role="presentation">
-            About me
-          </div>
-          <div onClick={() => setScrollValue(2)} role="presentation">
-            Portfolio
-          </div>
-          <div onClick={() => setScrollValue(3)} role="presentation">
-            Tech
-          </div>
-          <div onClick={() => setScrollValue(4)} role="presentation">
-            Contact
-          </div>
-        </div>
-      )}
-      {scrollValue > 0 && (
-        <div className="app__menu--right">
+    <>
+      {heightScreen && (
+        <div
+          className="app"
+          style={{
+            height: `${heightScreen}px`,
+          }}>
+          {scrollValue === 0 && firstPageVisible && window.innerWidth > 800 && (
+            <div className="app__menu">
+              <div onClick={() => setScrollValue(1)} role="presentation">
+                About me
+              </div>
+              <div onClick={() => setScrollValue(2)} role="presentation">
+                Portfolio
+              </div>
+              <div onClick={() => setScrollValue(3)} role="presentation">
+                Tech
+              </div>
+              <div onClick={() => setScrollValue(4)} role="presentation">
+                Contact
+              </div>
+            </div>
+          )}
+          {scrollValue > 0 && (
+            <div className="app__menu--right">
+              {sections.map((section, index) => (
+                <div
+                  key={index}
+                  onClick={() => setScrollValue(section.scrollNumber)}
+                  role="presentation"
+                  className={`app__menu--right__circle app__menu--right__circle${
+                    section.scrollNumber === scrollValue
+                      ? '--selected'
+                      : scrollValue % 2
+                      ? '--darker'
+                      : '--light'
+                  }`}></div>
+              ))}
+            </div>
+          )}
+
           {sections.map((section, index) => (
             <div
               key={index}
-              onClick={() => setScrollValue(section.scrollNumber)}
-              role="presentation"
-              className={`app__menu--right__ronron app__menu--right__ronron${
-                section.scrollNumber === scrollValue
-                  ? '--selected'
-                  : scrollValue % 2
-                  ? '--darker'
-                  : '--light'
-              }`}></div>
+              className={section.className}
+              style={{
+                height: `${heightScreen}px`,
+                transform: `translateY(-${heightScreen * scrollValue}px)`,
+              }}
+              onWheel={(e) => activeScroll && scroll(e.deltaY, index)}>
+              {section.component}
+            </div>
           ))}
         </div>
       )}
-
-      {sections.map((section, index) => (
-        <div
-          key={index}
-          className={section.className}
-          style={{
-            height: `${heightScreen}px`,
-            transform: `translateY(-${heightScreen * scrollValue}px)`,
-          }}
-          onWheel={(e) => activeScroll && scroll(e.deltaY, index)}>
-          {section.component}
-        </div>
-      ))}
-    </div>
+    </>
   );
 }
 
