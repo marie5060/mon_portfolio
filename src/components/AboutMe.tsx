@@ -19,10 +19,7 @@ const AboutMe = () => {
     textRef,
   );
 
-  const presentation: string[] = [
-    `En reconversion professionnelle, j'ai suivi une formation de développeuse Web et Web Mobile au sein de la Wild Code School d'Anglet. Enthousiaste, volontaire et aimant le travail d'équipe, je suis à la recherche d'un stage à compter du 14 février 2022, afin de m'épanouir et d'avancer main dans la main avec ma future entreprise.`,
-  ];
-
+  const presentation: string = `En reconversion professionnelle, j'ai suivi une formation de développeuse Web et Web Mobile au sein de la Wild Code School d'Anglet.Enthousiaste, volontaire et aimant le travail d'équipe, je suis à la recherche d'un stage à compter du 14 février 2022, afin de m'épanouir et d'avancer main dans la main avec ma future entreprise.`;
   const character: string[] = ['!', ',', '.', '?'];
   const titleName: string = 'ABOUT ME';
   const movingLetters: string[] = ['A', 'O', 'B', 'M'];
@@ -32,15 +29,19 @@ const AboutMe = () => {
       isVisible && setLaunchCount(true);
     }, 1200);
     if (lauchCount && isVisible) {
-      const test = setInterval(
+      const interval = setInterval(
         () => {
-          count < presentation[0].length - 1 && setCount(count + 1);
+          count < presentation.length - 1 && setCount(count + 1);
         },
-        character.includes(presentation[0][count]) ? 500 : 20,
+        character.includes(presentation[count]) ? 500 : 20,
       );
-      setText(text + presentation[0][count]);
+      setText(
+        presentation[count] === '.'
+          ? text + presentation[count] + '\n'
+          : text + presentation[count],
+      );
       return () => {
-        clearInterval(test);
+        clearInterval(interval);
         clearTimeout(timeout);
       };
     } else {
@@ -52,7 +53,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <p className="aboutMe__name">
+      <div className="aboutMe__name">
         {titleName.split(' ').map((word, index) => (
           <div className="aboutMe__name__word" key={index}>
             {word.split('').map((letter, index) => (
@@ -72,14 +73,19 @@ const AboutMe = () => {
             ))}
           </div>
         ))}
-      </p>
+      </div>
 
       <div className="aboutMe__infos">
         <div className="aboutMe__infos__presentation" ref={textRef}>
-          <p className="aboutMe__infos__presentation__text">
-            {text}
-            <span className="aboutMe__infos__presentation__text--bar">|</span>
-          </p>
+          <div className="aboutMe__infos__presentation__text">
+            {text.split('\n').map((sentence, index) => (
+              <span key={index}>
+                {sentence}
+                {sentence.substring(sentence.length - 1) === '.' && <br />}
+              </span>
+            ))}
+            <span className="aboutMe__infos__presentation__text--cursor">|</span>
+          </div>
         </div>
 
         <img className="aboutMe__infos__picture" alt="" src={aboutMe} />

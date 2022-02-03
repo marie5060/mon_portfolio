@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <>
-      <p className="contact__name" ref={titleRef}>
+      <div className="contact__name" ref={titleRef}>
         {titleName.split(' ').map((word, index) => (
           <div className="contact__name__word" key={index}>
             {word.split('').map((letter, index) => (
@@ -43,7 +43,7 @@ const Contact = () => {
             ))}
           </div>
         ))}
-      </p>
+      </div>
 
       <div className="contact__infos">
         <a href={CV} download>
@@ -53,10 +53,10 @@ const Contact = () => {
         <a href="mailto:marie.emlaine@gmail.com">
           <LogoMail className="contact__infos__icon" />
         </a>
-        <a href="https://github.com/marie5060">
+        <a href="https://github.com/marie5060" target="_blank">
           <LogoGithub className="contact__infos__icon" />
         </a>
-        <a href="https://www.linkedin.com/in/marie-lain%C3%A9-a12924222/">
+        <a href="https://www.linkedin.com/in/marie-lain%C3%A9-a12924222/" target="_blank">
           <LogoLinkedin className="contact__infos__icon" />
         </a>
       </div>

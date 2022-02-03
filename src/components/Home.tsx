@@ -1,8 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import UseElementOnScreen from '../hooks/UseElementOnScreen';
 
-const Home = () => {
+interface Props {
+  setFirstPageVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Home: React.FC<Props> = ({ setFirstPageVisible }) => {
   const titleRef = useRef<HTMLDivElement>(null);
   const isVisible: boolean = UseElementOnScreen(
     {
@@ -12,6 +16,10 @@ const Home = () => {
     },
     titleRef,
   );
+
+  useEffect(() => {
+    setFirstPageVisible(isVisible);
+  }, [isVisible]);
 
   const titleName: string = 'MARIE EMELINE LAINE';
   const titleDev: string = 'DEVELOPPEUSE WEB';

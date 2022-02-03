@@ -34,7 +34,7 @@ const Tech = () => {
 
   return (
     <>
-      <p className="tech__name">
+      <div className="tech__name">
         {titleName.split(' ').map((word, index) => (
           <div className="tech__name__word" key={index}>
             {word.split('').map((letter, index) => (
@@ -54,7 +54,7 @@ const Tech = () => {
             ))}
           </div>
         ))}
-      </p>
+      </div>
       <div className="tech__icons" ref={titleRef}>
         <ul className="tech__icons__list">
           {techList.map((tech, index) => (

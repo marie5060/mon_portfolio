@@ -55,14 +55,14 @@
     height: 80vh;
     justify-content: space-evenly;
     &__presentation {
-      padding-top: 2vw;
       width: 40%;
       font-family: Font_main;
       font-size: 2vw;
       display: flex;
       flex-wrap: wrap;
       &__text {
-        &--bar {
+        text-align: justify;
+        &--cursor {
           animation: 0.7s flicker infinite;
           @keyframes flicker {
             0% {
@@ -76,6 +76,9 @@
             }
           }
         }
+        & > span {
+          white-space: pre-wrap;
+        }
       }
       &__word {
         display: flex;
@@ -83,9 +86,9 @@
       }
     }
     &__picture {
-      padding-top: 10vw;
-      max-width: 15%;
+      max-width: 25%;
       height: auto;
+      border-radius: 50%;
     }
   }
 }
