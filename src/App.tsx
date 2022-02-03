@@ -53,58 +53,62 @@ function App() {
     }
   };
   return (
-    <div
-      className="app"
-      style={{
-        height: `${heightScreen}px`,
-      }}>
-      {scrollValue === 0 && firstPageVisible && window.innerWidth > 800 && (
-        <div className="app__menu">
-          <div onClick={() => setScrollValue(1)} role="presentation">
-            About me
-          </div>
-          <div onClick={() => setScrollValue(2)} role="presentation">
-            Portfolio
-          </div>
-          <div onClick={() => setScrollValue(3)} role="presentation">
-            Tech
-          </div>
-          <div onClick={() => setScrollValue(4)} role="presentation">
-            Contact
-          </div>
-        </div>
-      )}
-      {scrollValue > 0 && (
-        <div className="app__menu--right">
+    <>
+      {heightScreen && (
+        <div
+          className="app"
+          style={{
+            height: `${heightScreen}px`,
+          }}>
+          {scrollValue === 0 && firstPageVisible && window.innerWidth > 800 && (
+            <div className="app__menu">
+              <div onClick={() => setScrollValue(1)} role="presentation">
+                About me
+              </div>
+              <div onClick={() => setScrollValue(2)} role="presentation">
+                Portfolio
+              </div>
+              <div onClick={() => setScrollValue(3)} role="presentation">
+                Tech
+              </div>
+              <div onClick={() => setScrollValue(4)} role="presentation">
+                Contact
+              </div>
+            </div>
+          )}
+          {scrollValue > 0 && (
+            <div className="app__menu--right">
+              {sections.map((section, index) => (
+                <div
+                  key={index}
+                  onClick={() => setScrollValue(section.scrollNumber)}
+                  role="presentation"
+                  className={`app__menu--right__circle app__menu--right__circle${
+                    section.scrollNumber === scrollValue
+                      ? '--selected'
+                      : scrollValue % 2
+                      ? '--darker'
+                      : '--light'
+                  }`}></div>
+              ))}
+            </div>
+          )}
+
           {sections.map((section, index) => (
             <div
               key={index}
-              onClick={() => setScrollValue(section.scrollNumber)}
-              role="presentation"
-              className={`app__menu--right__circle app__menu--right__circle${
-                section.scrollNumber === scrollValue
-                  ? '--selected'
-                  : scrollValue % 2
-                  ? '--darker'
-                  : '--light'
-              }`}></div>
+              className={section.className}
+              style={{
+                height: `${heightScreen}px`,
+                transform: `translateY(-${heightScreen * scrollValue}px)`,
+              }}
+              onWheel={(e) => activeScroll && scroll(e.deltaY, index)}>
+              {section.component}
+            </div>
           ))}
         </div>
       )}
-
-      {sections.map((section, index) => (
-        <div
-          key={index}
-          className={section.className}
-          style={{
-            height: `${heightScreen}px`,
-            transform: `translateY(-${heightScreen * scrollValue}px)`,
-          }}
-          onWheel={(e) => activeScroll && scroll(e.deltaY, index)}>
-          {section.component}
-        </div>
-      ))}
-    </div>
+    </>
   );
 }
 

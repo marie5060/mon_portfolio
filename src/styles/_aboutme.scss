@@ -86,6 +86,9 @@
 
       &__text {
         text-align: justify;
+        @media screen and(max-width:$breakpoint-medium) {
+          text-align: center;
+        }
         &--cursor {
           animation: 0.7s flicker infinite;
           @keyframes flicker {
@@ -102,6 +105,9 @@
         }
         & > span {
           white-space: pre-wrap;
+          @media screen and (max-width: $breakpoint-medium) {
+            font-size: 4.5vw;
+          }
         }
       }
       &__word {
