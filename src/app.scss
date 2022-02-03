@@ -1,6 +1,9 @@
 .app {
   overflow: hidden;
   position: relative;
+  @media screen and (max-width: $breakpoint-medium) {
+    overflow: initial;
+  }
 
   &__menu {
     display: flex;
@@ -43,7 +46,7 @@
       justify-content: center;
       z-index: 10;
       cursor: pointer;
-      &__ronron {
+      &__circle {
         position: relative;
         height: 12px;
         width: 12px;
