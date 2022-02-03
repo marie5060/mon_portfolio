@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
-
+// import music from '../../assets/music.svg';
+// import tools from '../../assets/tools.svg';
+// import surf from '../../assets/surf.svg';
+// import game from '../../assets/game.svg';
 import UseElementOnScreen from '../hooks/UseElementOnScreen';
 
 const Portfolio = () => {
@@ -7,22 +10,22 @@ const Portfolio = () => {
   //   {
   //     idProject: 1,
   //     title: 'Crash Blind Test',
-  //     image: blind,
+  //     image: game,
   //   },
   //   {
   //     idProject: 2,
   //     title: 'Les Femmes Prennent Le Large',
-  //     image: lfpll,
+  //     image: surf,
   //   },
   //   {
   //     idProject: 3,
   //     title: 'Hackathon LiveUp',
-  //     image: LiveUp,
+  //     image: music,
   //   },
   //   {
   //     idProject: 4,
   //     title: 'Hackathon ManoMano',
-  //     image: manomano,
+  //     image: tools,
   //   },
   // ];
   const titleRef = useRef<HTMLDivElement>(null);
@@ -60,12 +63,6 @@ const Portfolio = () => {
             ))}
           </div>
         ))}
-      </div>
-      <div className="portfolio__polaroids">
-        {/* Fait un map de ton tableau */}
-        {/* {projects.map((project) => (
-          <Polaroid key={project.idProject} project={project} />
-        ))} */}
       </div>
     </>
   );
