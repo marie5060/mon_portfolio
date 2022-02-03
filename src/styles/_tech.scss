@@ -1,0 +1,69 @@
+.tech {
+  background-color: $colorPrimaryLight;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  z-index: 6;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  justify-content: space-between;
+
+  &::before {
+    background-color: $colorPrimaryDarker;
+    left: 5vw;
+    bottom: 4vw;
+    @include bigBall;
+  }
+  &::after {
+    background-color: $colorPrimary;
+    left: 12vw;
+    bottom: 2vw;
+    @include mediumBall;
+  }
+
+  &__name {
+    position: relative;
+    align-items: flex-end;
+    color: #1c2b2a;
+    display: flex;
+    font-size: 6vw;
+    font-weight: 400;
+    font-family: Font_title;
+    padding-left: 18vw;
+    padding-bottom: 4vw;
+    z-index: 6;
+    &::before {
+      background-color: $colorPrimaryDark;
+      bottom: 11vw;
+      left: 16vw;
+      @include tinyBall;
+    }
+
+    &__word {
+      font-size: 6vw;
+      font-weight: 400;
+      margin: 0 1rem;
+      display: flex;
+      &--letter {
+        transition: 1s ease-in-out;
+      }
+    }
+  }
+  &__icons {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      & > li {
+        transition: 1s ease-in-out;
+      }
+    }
+  }
+}
