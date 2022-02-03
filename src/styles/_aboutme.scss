@@ -1,71 +1,68 @@
 .aboutMe {
-  background-color: #95b7b1;
+  background-color: $colorPrimaryLight;
   transition: 1s;
-  &__container {
+  display: flex;
+  justify-content: center;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+
+  &::before {
+    background-color: $colorPrimaryDarker;
+    left: 5vw;
+    top: 4vw;
+    @include bigBall;
+  }
+  &::after {
+    background-color: $colorPrimary;
+    left: 12vw;
+    top: 2vw;
+    @include mediumBall;
+  }
+  &__name {
+    position: relative;
+    color: #1c2b2a;
+    display: flex;
+    font-size: 6vw;
+    font-weight: 400;
+    font-family: Font_title;
+    padding-top: 4vw;
+    padding-left: 18vw;
+    z-index: 6;
     &::before {
-      content: '';
-      position: absolute;
-      height: 14vw;
-      width: 16vw;
-      border-radius: 50%;
-      background-color: #122625;
-      left: 5vw;
-      top: 4vw;
-      z-index: -1;
+      background-color: $colorPrimaryDark;
+      top: 11vw;
+      left: 16vw;
+      @include tinyBall;
     }
-    &::after {
-      content: '';
-      position: absolute;
-      height: 11vw;
-      width: 14vw;
-      border-radius: 50%;
-      background-color: #5d9087;
-      left: 12vw;
-      top: 2vw;
-      z-index: 2;
-    }
-    &__title {
-      position: relative;
-      color: #1c2b2a;
-      display: flex;
+    &__word {
       font-size: 6vw;
       font-weight: 400;
-      font-family: Font_title;
-      padding-top: 4vw;
-      padding-left: 18vw;
-      z-index: 6;
-      &::before {
-        content: '';
-        position: absolute;
-        height: 6vw;
-        width: 7vw;
-        border-radius: 50%;
-        background-color: #204f4f;
-        top: 11vw;
-        left: 16vw;
-        z-index: 4;
-      }
-      &__name {
-        &--letter {
-          transition: 1s ease-in-out;
-        }
+      margin: 0 1rem;
+      display: flex;
+      &--letter {
+        transition: 1s ease-in-out;
       }
     }
   }
+
   &__infos {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    height: 80vh;
     justify-content: space-evenly;
     &__presentation {
-      padding-top: 2vw;
       width: 40%;
       font-family: Font_main;
       font-size: 2vw;
       display: flex;
       flex-wrap: wrap;
       &__text {
-        &--bar {
+        text-align: justify;
+        &--cursor {
           animation: 0.7s flicker infinite;
           @keyframes flicker {
             0% {
@@ -79,6 +76,9 @@
             }
           }
         }
+        & > span {
+          white-space: pre-wrap;
+        }
       }
       &__word {
         display: flex;
@@ -86,9 +86,9 @@
       }
     }
     &__picture {
-      padding-top: 10vw;
-      max-width: 15%;
+      max-width: 25%;
       height: auto;
+      border-radius: 50%;
     }
   }
 }

@@ -1,20 +1,31 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const UseElementOnScreen = (options: any, targetRef: any) => {
-  const [isVisible, setIsVisible] = useState(false);
+interface RootElement {
+  element: HTMLElement;
+  id: string;
+}
 
-  const optionsMemo = useMemo(() => {
+interface ObserveOptions {
+  rootElement?: RootElement;
+  rootMargin?: string;
+  threshold?: number | number[];
+}
+
+const UseElementOnScreen = (options: ObserveOptions, targetRef: any): boolean => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  const optionsMemo = useMemo<ObserveOptions>(() => {
     return options;
   }, [options]);
 
-  const callbackFunction = (entries: any) => {
+  const callbackFunction = (entries: IntersectionObserverEntry[]): void => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);
   };
 
   useEffect(() => {
     const observer = new IntersectionObserver(callbackFunction, optionsMemo);
-    const currentTarget = targetRef.current;
+    const currentTarget: Element = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
     return () => {
       if (currentTarget) {

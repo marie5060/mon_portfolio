@@ -1,3 +1,51 @@
 .app {
   overflow: hidden;
+  position: relative;
+  &__menu {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+    z-index: 10;
+    color: $colorPrimaryLight;
+    font-family: Font_main;
+    font-size: 2vw;
+    width: 50vw;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &--right {
+      position: absolute;
+      width: 2vw;
+      right: 0px;
+      bottom: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 10;
+      cursor: pointer;
+      &__ronron {
+        position: relative;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        z-index: 10;
+        margin: 12px 0;
+
+        &--light {
+          background-color: $colorPrimaryLight;
+        }
+        &--dark {
+          background-color: $colorPrimaryDark;
+        }
+        &--darker {
+          background-color: $colorPrimaryDarker;
+        }
+        &--selected {
+          background-color: #fdeded;
+        }
+      }
+    }
+  }
 }

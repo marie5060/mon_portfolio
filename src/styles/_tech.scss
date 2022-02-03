@@ -1,70 +1,69 @@
 .tech {
-  background-color: #95b7b1;
+  background-color: $colorPrimaryLight;
   transition: 1s;
   display: flex;
+  justify-content: center;
+  z-index: 6;
+  display: flex;
   flex-direction: column-reverse;
-  &__container {
-    z-index: 6;
+  position: relative;
+  justify-content: space-between;
+
+  &::before {
+    background-color: $colorPrimaryDarker;
+    left: 5vw;
+    bottom: 4vw;
+    @include bigBall;
+  }
+  &::after {
+    background-color: $colorPrimary;
+    left: 12vw;
+    bottom: 2vw;
+    @include mediumBall;
+  }
+
+  &__name {
     position: relative;
+    align-items: flex-end;
+    color: #1c2b2a;
+    display: flex;
+    font-size: 6vw;
+    font-weight: 400;
+    font-family: Font_title;
+    padding-left: 18vw;
+    padding-bottom: 4vw;
+    z-index: 6;
     &::before {
-      content: '';
-      position: absolute;
-      height: 14vw;
-      width: 16vw;
-      border-radius: 50%;
-      background-color: #122625;
-      left: 5vw;
-      bottom: 4vw;
-      z-index: -1;
+      background-color: $colorPrimaryDark;
+      bottom: 11vw;
+      left: 16vw;
+      @include tinyBall;
     }
-    &::after {
-      content: '';
-      position: absolute;
-      height: 11vw;
-      width: 14vw;
-      border-radius: 50%;
-      background-color: #5d9087;
-      left: 12vw;
-      bottom: 2vw;
-      z-index: 2;
-    }
-    &__title {
-      position: relative;
-      color: #1c2b2a;
-      display: flex;
+
+    &__word {
       font-size: 6vw;
       font-weight: 400;
-      font-family: Font_title;
-      padding-left: 18vw;
-      padding-bottom: 4vw;
-      z-index: 6;
-      &::before {
-        content: '';
-        position: absolute;
-        height: 6vw;
-        width: 7vw;
-        border-radius: 50%;
-        background-color: #204f4f;
-        bottom: 11vw;
-        left: 16vw;
-        z-index: 4;
-        &__name {
-          &--letter {
-            transition: 1s ease-in-out;
-          }
-        }
+      margin: 0 1rem;
+      display: flex;
+      &--letter {
+        transition: 1s ease-in-out;
       }
     }
   }
   &__icons {
+    height: 80vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: auto;
-    &__icon {
-      width: 120px;
-      height: 120px;
-      fill: #204f4f;
+    flex-direction: column;
+    justify-content: center;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      & > li {
+        transition: 1s ease-in-out;
+      }
     }
   }
 }

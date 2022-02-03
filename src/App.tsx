@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 
-import AboutMe from './Component/AboutMe';
-import Contact from './Component/Contact';
-import Home from './Component/Home';
-import Portfolio from './Component/Portfolio';
-import Tech from './Component/Tech';
+import AboutMe from './components/AboutMe';
+import Contact from './components/Contact';
+import Home from './components/Home';
+import Portfolio from './components/Portfolio';
+import Tech from './components/Tech';
+
+type Section = {
+  className: string;
+  component: ReactElement;
+  scrollNumber: number;
+};
 
 function App() {
-  const [heightScreen, setHeightScreen] = useState(0);
-  const [scrollValue, setScrollValue] = useState(0);
-  const [activeScroll, setActiveScroll] = useState(true);
+  const [heightScreen, setHeightScreen] = useState<number>(0);
+  const [scrollValue, setScrollValue] = useState<number>(0);
+  const [activeScroll, setActiveScroll] = useState<boolean>(true);
+  const [firstPageVisible, setFirstPageVisible] = useState<boolean>(true);
 
   useEffect(() => {
     setHeightScreen(window.innerHeight);
@@ -18,16 +25,20 @@ function App() {
     });
   }, []);
 
-  const section = [
-    { className: 'home', component: <Home /> },
-    { className: 'aboutMe', component: <AboutMe /> },
-    { className: 'portfolio', component: <Portfolio /> },
-    { className: 'tech', component: <Tech /> },
-    { className: 'contact', component: <Contact /> },
+  const sections: Section[] = [
+    {
+      className: 'home',
+      component: <Home setFirstPageVisible={setFirstPageVisible} />,
+      scrollNumber: 0,
+    },
+    { className: 'aboutMe', component: <AboutMe />, scrollNumber: 1 },
+    { className: 'portfolio', component: <Portfolio />, scrollNumber: 2 },
+    { className: 'tech', component: <Tech />, scrollNumber: 3 },
+    { className: 'contact', component: <Contact />, scrollNumber: 4 },
   ];
   const scroll = (valueScroll: number, index: number) => {
     if (scrollValue >= 0) {
-      if (valueScroll > 0 && index < section.length - 1) {
+      if (valueScroll > 0 && index < sections.length - 1) {
         setScrollValue(index + 1);
         setActiveScroll(false);
       } else {
@@ -47,16 +58,40 @@ function App() {
       style={{
         height: `${heightScreen}px`,
       }}>
-      {section.map((el, index) => (
+      {scrollValue === 0 && firstPageVisible && (
+        <div className="app__menu">
+          <div onClick={() => setScrollValue(1)}>About me</div>
+          <div onClick={() => setScrollValue(2)}>Portfolio</div>
+          <div onClick={() => setScrollValue(3)}>Tech</div>
+          <div onClick={() => setScrollValue(4)}>Contact</div>
+        </div>
+      )}
+      {scrollValue > 0 && (
+        <div className="app__menu--right">
+          {sections.map((section) => (
+            <div
+              onClick={() => setScrollValue(section.scrollNumber)}
+              className={`app__menu--right__ronron app__menu--right__ronron${
+                section.scrollNumber === scrollValue
+                  ? '--selected'
+                  : scrollValue % 2
+                  ? '--darker'
+                  : '--light'
+              }`}></div>
+          ))}
+        </div>
+      )}
+
+      {sections.map((section, index) => (
         <div
           key={index}
-          className={el.className}
+          className={section.className}
           style={{
             height: `${heightScreen}px`,
             transform: `translateY(-${heightScreen * scrollValue}px)`,
           }}
           onWheel={(e) => activeScroll && scroll(e.deltaY, index)}>
-          {el.component}
+          {section.component}
         </div>
       ))}
     </div>
