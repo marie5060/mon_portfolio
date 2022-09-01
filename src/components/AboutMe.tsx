@@ -19,7 +19,7 @@ const AboutMe = () => {
     textRef,
   );
 
-  const presentation: string = `En reconversion professionnelle, j'ai suivi une formation de développeuse Web et Web Mobile au sein de la Wild Code School d'Anglet.Enthousiaste, volontaire et aimant le travail d'équipe, je suis à la recherche d'un stage à compter du 14 février 2022, afin de m'épanouir et d'avancer main dans la main avec ma future entreprise.`;
+  const presentation: string = `En reconversion professionnelle, j'ai suivi une formation de développeuse Web et Web Mobile au sein de la Wild Code School d'Anglet. Et un stage de 6 mois chez Digital Copilot. Enthousiaste, volontaire et aimant le travail d'équipe, je suis à la recherche d'une alternance à compter du début septembre 2022, afin de m'épanouir et d'avancer main dans la main avec ma future entreprise.`;
   const character: string[] = ['!', ',', '.', '?'];
   const titleName: string = 'ABOUT ME';
   const movingLetters: string[] = ['A', 'O', 'B', 'M'];
