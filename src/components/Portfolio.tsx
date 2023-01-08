@@ -4,6 +4,7 @@ import game from '../../assets/game.svg';
 import music from '../../assets/music.svg';
 import surf from '../../assets/surf.svg';
 import tools from '../../assets/tools.svg';
+import wine from '../../assets/Wine_bottle.svg';
 import UseElementOnScreen from '../hooks/UseElementOnScreen';
 import IProject from '../interfaces/IProject';
 
@@ -35,6 +36,12 @@ const Portfolio = () => {
       title: 'ManoMano X Wild',
       image: tools,
       text: " Hackathon (48h) en partenariat avec ManoMano visant à améliorer l'experience utilisateur sur leur site.",
+    },
+    {
+      idProject: 5,
+      title: 'SecretCellar',
+      image: wine,
+      text: "Projet de formation effectué en premier lieu en php/twig, puis grâce au framework symfony dans un second temps. Une solution permettant de gérer une cave à vin personelle (gestion de stock stock, diverses filtres)",
     },
   ];
   const titleRef = useRef<HTMLDivElement>(null);
