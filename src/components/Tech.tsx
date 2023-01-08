@@ -15,6 +15,12 @@ const techList = [
   { name: 'Postman', icon: 'logos-postman' },
   { name: 'Figma', icon: 'logos-figma' },
   { name: 'mysql', icon: 'logos-mysql' },
+  { name: 'tailwind', icon: 'logos-tailwind' },
+  // { name: 'twig', icon: 'logos-twig' },
+  { name: 'php', icon: 'logos-php' },
+  { name: 'symfony', icon: 'logos-symfony' },
+  { name: 'next', icon: 'logos-next' },
+
 ];
 
 const Tech = () => {

@@ -41,7 +41,7 @@ const Portfolio = () => {
       idProject: 5,
       title: 'SecretCellar',
       image: wine,
-      text: "Projet de formation effectué en premier lieu en php/twig, puis grâce au framework symfony dans un second temps. Une solution permettant de gérer une cave à vin personelle (gestion de stock stock, diverses filtres)",
+      text: 'Projet de formation effectué en premier lieu en php/twig, puis grâce au framework symfony dans un second temps. Une solution permettant de gérer une cave à vin personelle (gestion de stock stock, diverses filtres)',
     },
   ];
   const titleRef = useRef<HTMLDivElement>(null);
