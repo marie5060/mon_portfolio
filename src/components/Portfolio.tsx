@@ -35,13 +35,13 @@ const Portfolio = () => {
       idProject: 4,
       title: 'ManoMano X Wild',
       image: tools,
-      text: " Hackathon (48h) en partenariat avec ManoMano visant à améliorer l'experience utilisateur sur leur site.",
+      text: " Hackathon (48h) en partenariat avec ManoMano visant à améliorer l'expérience utilisateur sur leur site.",
     },
     {
       idProject: 5,
       title: 'SecretCellar',
       image: wine,
-      text: 'Projet de formation effectué en premier lieu en php/twig, puis grâce au framework symfony dans un second temps. Une solution permettant de gérer une cave à vin personelle (gestion de stock stock, diverses filtres)',
+      text: 'Projet de formation effectué en premier lieu en php/twig, puis grâce au framework symfony dans un second temps. Une solution permettant de gérer une cave à vin personnelle (gestion de stock, CRUD)',
     },
   ];
   const titleRef = useRef<HTMLDivElement>(null);
@@ -129,25 +129,23 @@ const Portfolio = () => {
                   <img src={project.image} alt="logo_project" />
                 </div>
                 <h2>{project.title}</h2>
-                <p>{project.text}</p>
+                <p>{project.text}</p>    
+                  {projects.map((project, index) => selectProject === index && project.link && (
+                    <a
+                      className="portfolio__name--link"
+                      key={index}
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Voir le site
+                    </a>
+                    ),
+                )}
               </div>
             ))}
           </div>
         </div>
-        {projects.map(
-          (project, index) =>
-            selectProject === index &&
-            project.link && (
-              <a
-                className="portfolio__name--link"
-                key={index}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer">
-                Voir le site
-              </a>
-            ),
-        )}
+
       </div>
     </>
   );
