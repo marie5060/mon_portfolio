@@ -20,7 +20,6 @@ const techList = [
   { name: 'php', icon: 'logos-php' },
   { name: 'symfony', icon: 'logos-symfony' },
   { name: 'next', icon: 'logos-next' },
-
 ];
 
 const Tech = () => {
