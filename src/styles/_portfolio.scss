@@ -49,7 +49,7 @@
     }
     &--link {
       position: absolute;
-      bottom: 10vw;
+      bottom:6vw;
       left: 10vw;
       color: $colorPrimary;
       font-size: 4vw;
@@ -87,7 +87,7 @@
         justify-content: center;
         align-items: center;
         border-right: 1px solid white;
-        margin: 10vw 0;
+        margin: 4vw 0;
         @media screen and (max-width: $breakpoint-medium) {
           border-right: none;
           border-bottom: 1px solid white;
